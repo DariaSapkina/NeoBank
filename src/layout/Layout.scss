@@ -1,5 +1,17 @@
-.layout {
-  width: 100%;
-  max-width: 1300px;
-  margin: 0 auto;
+.page {
+  &__background {
+    &_purple {
+      background-color: #f5f4ff;
+    }
+
+    &_grey {
+      background-color: rgba($color: #b2b2b2, $alpha: 0.2);
+    }
+  }
+
+  &__layout {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
 }

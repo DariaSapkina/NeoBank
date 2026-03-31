@@ -6,10 +6,18 @@ import "./Layout.scss";
 
 const Layout: FC<ILayoutProps> = ({ children }) => {
   return (
-    <div className="layout">
-      <Header />
-      <main>{children}</main>
-      <Footer />
+    <div className="page">
+      <div className="page__background page__background_purple">
+        <div className="page__layout">
+          <Header />
+          <main>{children}</main>
+        </div>
+      </div>
+      <div className="page__background page__background_grey">
+        <div className="page__layout">
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 };
