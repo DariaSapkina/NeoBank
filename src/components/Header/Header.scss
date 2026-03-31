@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+
+  &__title a {
+    font-size: 24px;
+    color: #b4387a;
+    letter-spacing: 2%;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #8d2c60;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+  }
+
+  &__listItem a {
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 2%;
+    color: #1d1929;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #514672;
+    }
+  }
+
+  &__button {
+    width: 128px;
+  }
+}
