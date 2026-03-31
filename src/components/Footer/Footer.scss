@@ -1,0 +1,91 @@
+.footer {
+  padding: 96px 0 92px 0;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 32px;
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: start;
+    font-style: normal;
+
+    & > a {
+      text-decoration: none;
+    }
+  }
+
+  &__phone {
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    line-height: 147.4%;
+    transition: color 0.3s;
+
+    &:hover {
+      color: rgb(94, 94, 94);
+    }
+  }
+
+  &__email {
+    font-size: 16px;
+    letter-spacing: 2%;
+    font-weight: 500;
+    color: #2d3748;
+    line-height: 147.4%;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #58657e;
+    }
+  }
+
+  &__navigation {
+    margin-bottom: 64px;
+  }
+
+  &__list {
+    list-style: none;
+    display: flex;
+    column-gap: 32px;
+    row-gap: 8px;
+    flex-wrap: wrap;
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 2px;
+      background-color: white;
+      width: 100%;
+      position: absolute;
+      bottom: -28px;
+    }
+  }
+
+  &__listItem a {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 147.4%;
+    letter-spacing: 2%;
+    transition: color 0.3s;
+
+    &:hover {
+      color: rgb(94, 94, 94);
+    }
+  }
+
+  &__legal {
+    color: #2d3748;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 147.4%;
+    letter-spacing: 2%;
+  }
+}

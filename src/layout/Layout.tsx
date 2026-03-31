@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { Header } from "../components/Header/Header";
-import { Footer } from "../components/Footer";
+import { Footer } from "../components/Footer/Footer";
 import type { ILayoutProps } from "./Layout.props";
 import "./Layout.scss";
 
