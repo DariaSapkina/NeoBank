@@ -1,5 +1,11 @@
+import { Button } from "./Button/Button";
+
 const Header = () => {
-  return <div>HEADER</div>;
+  return (
+    <div>
+      <Button title="aa" variant="rounded"></Button>
+    </div>
+  );
 };
 
 export { Header };
