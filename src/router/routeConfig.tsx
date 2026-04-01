@@ -1,17 +1,17 @@
 import type { RouteProps } from "react-router-dom";
-import { Main } from "../pages/Main";
+import { HomePage } from "../pages/HomePage/HomePage";
 
 export enum AppRoutes {
-  MAIN = "main",
+  HOME = "home",
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
-  [AppRoutes.MAIN]: "/",
+  [AppRoutes.HOME]: "/",
 };
 
 export const routerConfig: Record<AppRoutes, RouteProps> = {
-  [AppRoutes.MAIN]: {
-    path: RoutePath.main,
-    element: <Main />,
+  [AppRoutes.HOME]: {
+    path: RoutePath.home,
+    element: <HomePage />,
   },
 };

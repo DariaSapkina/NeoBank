@@ -7,7 +7,7 @@ const Header = () => {
   return (
     <header className="header">
       <h1 className="header__title">
-        <Link to={RoutePath[AppRoutes.MAIN]}>NeoBank</Link>
+        <Link to={RoutePath[AppRoutes.HOME]}>NeoBank</Link>
       </h1>
       <nav className="header__navigation">
         <ul className="header__list">
