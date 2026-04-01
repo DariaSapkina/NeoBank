@@ -1,0 +1,100 @@
+.subscribeSection {
+  &__title {
+    color: #ea7f1c;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 147.4%;
+    margin-bottom: 30px;
+  }
+
+  &__paragraphUp {
+    color: #1c1c1e;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 120%;
+    margin-bottom: 27px;
+  }
+
+  &__paragraphDown {
+    color: #1c1c1e;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 147.4%;
+    margin-bottom: 62px;
+  }
+
+  &__form {
+    background-color: #ffffff;
+    box-shadow: 0px 10px 20px 0px rgba(54, 58, 120, 0.1);
+    border-radius: 20px;
+    width: 525px;
+    height: 90px;
+    border: none;
+    outline: none;
+    padding: 0 32px 0 69px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin: 0 auto;
+
+    &::before {
+      content: "";
+      background-image: url("../../../../assets/emailIcon.svg");
+      position: absolute;
+      width: 28px;
+      height: 38px;
+      top: 26px;
+      left: 32px;
+      z-index: 100;
+    }
+
+    &:focus-within {
+      border: 1px solid #676df1;
+    }
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    color: #8f91b0;
+    font-size: 20px;
+    font-family: Nunito Sans;
+    letter-spacing: 2px;
+  }
+
+  &__button {
+    background-color: #676df1;
+    border-radius: 20px;
+    width: 162px;
+    height: 45px;
+    border: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    position: relative;
+    padding-left: 25px;
+    transition: background-color 0.3s;
+
+    &::before {
+      content: "";
+      background-image: url("../../../../assets/sendIcon.svg");
+      width: 24px;
+      height: 40px;
+      position: absolute;
+      top: 0;
+      left: 14px;
+    }
+
+    &:hover {
+      background-color: #5359c3;
+      cursor: pointer;
+    }
+  }
+}
