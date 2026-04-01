@@ -1,0 +1,25 @@
+.heroSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+
+  &__title {
+    color: #1c1c1e;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 50px;
+    width: 100%;
+    max-width: 622px;
+    margin-bottom: 36px;
+  }
+
+  &__buttonWrapper {
+    width: 160px;
+  }
+
+  &__cardsWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 15px;
+  }
+}
