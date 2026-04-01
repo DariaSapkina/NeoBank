@@ -1,0 +1,48 @@
+.featureSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: Rubik;
+
+  &__title {
+    color: #0b132a;
+    font-size: 35px;
+    font-weight: 500;
+    line-height: 50px;
+    margin-bottom: 20px;
+  }
+
+  &__paragraph {
+    color: #4e5664;
+    font-size: 16px;
+    line-height: 30px;
+    margin-bottom: 25px;
+  }
+
+  &__list {
+    list-style: none;
+    padding-left: 40px;
+  }
+
+  &__listItem {
+    color: #4f5665;
+    font-size: 14px;
+    line-height: 30px;
+    position: relative;
+
+    &::before {
+      content: "";
+      background-image: url("/src/assets/listStyleHomePage.svg");
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: -40px;
+      transform: translateY(-50%);
+      top: 50%;
+    }
+
+    &:not(:last-child) {
+      margin-bottom: 12px;
+    }
+  }
+}
