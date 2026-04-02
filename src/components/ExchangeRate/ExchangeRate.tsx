@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { CURRENCIES_FROM } from "../../constants/currency";
-import { getDate } from "../../utils/getDate";
-import { useCurrency } from "../../hooks/useCurrency";
+import { CURRENCIES_FROM } from "@/constants/currency";
+import { getDate } from "@/utils/getDate";
+import { useCurrency } from "@/hooks/useCurrency";
 import "./ExchangeRate.scss";
 
 const ExchangeRate = () => {

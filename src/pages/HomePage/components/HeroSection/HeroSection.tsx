@@ -1,9 +1,9 @@
 import "./HeroSection.scss";
-import { Button } from "../../../../components/Button/Button";
-import cardImage1 from "../../../../assets/cardImage1.png";
-import cardImage2 from "../../../../assets/cardImage2.png";
-import cardImage3 from "../../../../assets/cardImage3.png";
-import cardImage4 from "../../../../assets/cardImage4.png";
+import { Button } from "@/components/Button/Button";
+import cardImage1 from "@/assets/cardImage1.png";
+import cardImage2 from "@/assets/cardImage2.png";
+import cardImage3 from "@/assets/cardImage3.png";
+import cardImage4 from "@/assets/cardImage4.png";
 
 const HeroSection = () => {
   return (

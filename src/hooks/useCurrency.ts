@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getAllCurrency, type ICurrencyResponse } from "../utils/getCurrency";
+import { getAllCurrency, type ICurrencyResponse } from "@/utils/getCurrency";
 import {
   URL,
   API_KEY,

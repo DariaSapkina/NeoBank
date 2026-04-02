@@ -1,5 +1,5 @@
 import "./FeatureSection.scss";
-import illustrationHomePage from "../../../../assets/IllustrationHomePage.svg";
+import illustrationHomePage from "@/assets/IllustrationHomePage.svg";
 
 const FeatureSection = () => {
   return (

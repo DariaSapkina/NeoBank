@@ -1,4 +1,4 @@
-import globalMap from "../../../../assets/globalMap.svg";
+import globalMap from "@/assets/globalMap.svg";
 import "./CoverageSection.scss";
 
 const CoverageSection = () => {
