@@ -6,6 +6,7 @@
 
   &__title a {
     font-size: 24px;
+    font-weight: 600;
     color: #b4387a;
     letter-spacing: 2%;
     text-decoration: none;
@@ -31,7 +32,7 @@
     transition: color 0.3s;
 
     &:hover {
-      color: #514672;
+      color: #b2a35f;
     }
   }
 
