@@ -15,9 +15,9 @@ const Header = () => {
 
   return (
     <header className="header">
-      <h1 className="header__title">
+      <div className="header__title">
         <Link to={RoutePath[AppRoutes.HOME]}>NeoBank</Link>
-      </h1>
+      </div>
       <nav className="header__navigation">
         <ul className="header__list">
           {links.map(({ label, href }) => (
@@ -31,7 +31,11 @@ const Header = () => {
         <BurgerMenu items={links} />
       </div>
       <div className="header__button">
-        <Button title="Online Bank" variant="rounded" />
+        <Button
+          title="Online Bank"
+          variant="rounded"
+          ariaLabel="Go to Online Bank"
+        />
       </div>
     </header>
   );
