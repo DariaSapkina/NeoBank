@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 7px 0;
+  padding-top: 7px;
 
   &__title a {
     font-size: 24px;
@@ -35,7 +35,52 @@
     }
   }
 
+  &__burgerWrapper {
+    display: none;
+  }
+
   &__button {
     width: 128px;
+  }
+}
+
+@media (max-width: 1339px) {
+  .header {
+    padding: 7px 20px 0px 20px;
+  }
+}
+
+@media (max-width: 793px) {
+  .header {
+    & > :nth-child(3) {
+      margin-right: auto;
+    }
+    &__navigation {
+      display: none;
+    }
+    &__burgerWrapper {
+      display: block;
+      margin-left: 10px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .header {
+    flex-wrap: wrap;
+    row-gap: 20px;
+
+    & > :nth-child(3) {
+      margin-right: 0;
+    }
+
+    &__button {
+      width: 110px;
+    }
+
+    &__burgerWrapper {
+      order: -1;
+      margin-left: 0;
+    }
   }
 }

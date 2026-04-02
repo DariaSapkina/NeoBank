@@ -1,9 +1,18 @@
 import { Link } from "react-router-dom";
 import { Button } from "../Button/Button";
 import { AppRoutes, RoutePath } from "@/router/routeConfig";
+//import { useState } from "react";
+import { BurgerMenu, type TNavItem } from "../BurgerMenu/BurgerMenu";
 import "./Header.scss";
 
 const Header = () => {
+  const links: TNavItem[] = [
+    { label: "Credit card", href: "#" },
+    { label: "Product", href: "#" },
+    { label: "Account", href: "#" },
+    { label: "Resources", href: "#" },
+  ];
+
   return (
     <header className="header">
       <h1 className="header__title">
@@ -11,20 +20,16 @@ const Header = () => {
       </h1>
       <nav className="header__navigation">
         <ul className="header__list">
-          <li className="header__listItem">
-            <Link to="#">Credit card</Link>
-          </li>
-          <li className="header__listItem">
-            <Link to="#">Product</Link>
-          </li>
-          <li className="header__listItem">
-            <Link to="#">Account</Link>
-          </li>
-          <li className="header__listItem">
-            <Link to="#">Resources</Link>
-          </li>
+          {links.map(({ label, href }) => (
+            <li className="header__listItem" key={label}>
+              <Link to={href}>{label}</Link>
+            </li>
+          ))}
         </ul>
       </nav>
+      <div className="header__burgerWrapper">
+        <BurgerMenu items={links} />
+      </div>
       <div className="header__button">
         <Button title="Online Bank" variant="rounded" />
       </div>
