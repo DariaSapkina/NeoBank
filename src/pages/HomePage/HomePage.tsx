@@ -1,9 +1,9 @@
-import "./HomePage.scss";
 import { HeroSection } from "./components/HeroSection/HeroSection";
 import { FeatureSection } from "./components/FeatureSection/FeatureSection";
 import { ExchangeRateSection } from "./components/ExchangeRateSection/ExchangeRateSection";
 import { CoverageSection } from "./components/CoverageSection/CoverageSection";
 import { SubscribeSection } from "./components/SubscribeSection/SubscribeSection";
+import "./HomePage.scss";
 
 const HomePage = () => {
   return (

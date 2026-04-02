@@ -3,7 +3,7 @@ import logo from "@/assets/logo.png";
 import "./Footer.scss";
 
 const Footer = () => {
-  const listItems: Record<string, string>[] = [
+  const listItems = [
     { title: "About bank", link: "#" },
     { title: "Ask a Question", link: "#" },
     { title: "Quality of service", link: "#" },

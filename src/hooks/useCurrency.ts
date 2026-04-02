@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
-import { getAllCurrency, type ICurrencyResponse } from "@/utils/getCurrency";
+import {
+  getAllCurrency,
+  type ICurrencyResponse,
+} from "@/components/ExchangeRate/getCurrency";
 import {
   URL,
   API_KEY,
   CURRENCIES_FROM,
   CURRENCY_TO,
   refreshIntervalMs,
-} from "../constants/currency";
+} from "@/components/ExchangeRate/currencyConst";
 
 type TCurrencyData = Record<string, ICurrencyResponse | null>;
 
