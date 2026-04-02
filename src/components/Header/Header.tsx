@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Button } from "../Button/Button";
-import { AppRoutes, RoutePath } from "../../router/routeConfig";
+import { AppRoutes, RoutePath } from "@/router/routeConfig";
 import "./Header.scss";
 
 const Header = () => {

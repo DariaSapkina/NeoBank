@@ -1,4 +1,4 @@
-import { ExchangeRate } from "../../../../components/ExchangeRate/ExchangeRate";
+import { ExchangeRate } from "@/components/ExchangeRate/ExchangeRate";
 
 const ExchangeRateSection = () => {
   return (
