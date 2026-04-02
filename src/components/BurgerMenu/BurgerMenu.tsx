@@ -22,6 +22,7 @@ const BurgerMenu: FC<IBurgerMenuProps> = ({ items }) => {
       <button
         aria-label="Toggle menu"
         onClick={handleOpen}
+        aria-expanded={isOpen}
         className="burgerMenu__button"
       >
         {isOpen ? "✕" : "☰"}

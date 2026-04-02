@@ -13,7 +13,11 @@ const HeroSection = () => {
           Choose the design you like and apply for card right now
         </h1>
         <div className="heroSection__buttonWrapper">
-          <Button title="Choose the card" variant="rounded" />
+          <Button
+            title="Choose the card"
+            variant="rounded"
+            ariaLabel="Choose your card and apply"
+          />
         </div>
       </div>
       <div className="heroSection__cardsWrapper">
