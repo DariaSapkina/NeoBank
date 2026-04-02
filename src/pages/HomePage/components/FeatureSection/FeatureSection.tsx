@@ -1,7 +1,14 @@
-import "./FeatureSection.scss";
 import illustrationHomePage from "@/assets/IllustrationHomePage.svg";
+import "./FeatureSection.scss";
 
 const FeatureSection = () => {
+  const featureList = [
+    "Powerfull online protection.",
+    "Cashback without borders.",
+    "Personal design.",
+    "Work anywhere in the world.",
+  ];
+
   return (
     <section className="featureSection">
       <div className="featureSection__imgWrapper">
@@ -16,16 +23,11 @@ const FeatureSection = () => {
           own functions each feature
         </p>
         <ul className="featureSection__list">
-          <li className="featureSection__listItem">
-            Powerfull online protection.
-          </li>
-          <li className="featureSection__listItem">
-            Cashback without borders.
-          </li>
-          <li className="featureSection__listItem">Personal design</li>
-          <li className="featureSection__listItem">
-            Work anywhere in the world
-          </li>
+          {featureList.map((item) => (
+            <li className="featureSection__listItem" key={item}>
+              {item}
+            </li>
+          ))}
         </ul>
       </div>
     </section>

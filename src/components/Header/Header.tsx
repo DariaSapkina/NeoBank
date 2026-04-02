@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { Button } from "../Button/Button";
+import { Button } from "@/components/Button/Button";
 import { AppRoutes, RoutePath } from "@/router/routeConfig";
-//import { useState } from "react";
-import { BurgerMenu, type TNavItem } from "../BurgerMenu/BurgerMenu";
+import { BurgerMenu } from "@/components/BurgerMenu/BurgerMenu";
+import type { TNavItem } from "@/components/BurgerMenu/BurgerMenu.props";
 import "./Header.scss";
 
 const Header = () => {
