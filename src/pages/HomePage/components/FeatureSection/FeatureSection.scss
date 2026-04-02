@@ -3,6 +3,8 @@
   justify-content: space-between;
   align-items: center;
   font-family: Rubik;
+  margin-bottom: 48px;
+  gap: 20px;
 
   &__title {
     color: #0b132a;
@@ -43,6 +45,23 @@
 
     &:not(:last-child) {
       margin-bottom: 12px;
+    }
+  }
+}
+
+@media (max-width: 944px) {
+  .featureSection {
+    &__imgWrapper img {
+      width: 300px;
+    }
+  }
+}
+
+@media (max-width: 944px) {
+  .featureSection {
+    flex-direction: column;
+    &__imgWrapper img {
+      width: 100%;
     }
   }
 }

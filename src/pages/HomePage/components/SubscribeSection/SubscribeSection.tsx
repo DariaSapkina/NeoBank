@@ -1,5 +1,6 @@
 import "./SubscribeSection.scss";
 import { useState } from "react";
+import sendIcon from "@/assets/sendIcon.svg";
 
 const SubscribeSection = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +24,8 @@ const SubscribeSection = () => {
           required
         />
         <button className="subscribeSection__button" type="submit">
-          Subscribe
+          <img src={sendIcon} alt="" />
+          <span>Subscribe</span>
         </button>
       </form>
     </section>

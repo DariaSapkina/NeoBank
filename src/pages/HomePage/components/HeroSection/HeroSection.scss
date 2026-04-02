@@ -2,6 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: start;
+  margin-bottom: 112px;
+  gap: 20px;
 
   &__title {
     color: #1c1c1e;
@@ -21,5 +23,44 @@
     display: grid;
     grid-template-columns: repeat(2, auto);
     gap: 15px;
+  }
+}
+
+@media (max-width: 1091px) {
+  .heroSection {
+    align-items: center;
+
+    &__cardsWrapper img {
+      width: 200px;
+    }
+  }
+}
+
+@media (max-width: 875px) {
+  .heroSection {
+    align-items: center;
+    flex-direction: column-reverse;
+    margin-bottom: 48px;
+
+    &__title {
+      text-align: center;
+      max-width: 100%;
+    }
+
+    &__buttonWrapper {
+      margin: 0 auto;
+    }
+
+    &__cardsWrapper img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .heroSection {
+    &__title {
+      font-size: 38px;
+    }
   }
 }

@@ -1,4 +1,6 @@
 .coverageSection {
+  margin-bottom: 48px;
+
   &__title {
     color: #1c1c1c;
     text-align: center;
@@ -19,5 +21,24 @@
 
   &__imgWapper {
     text-align: center;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .coverageSection {
+    margin-bottom: 48px;
+
+    &__title {
+      line-height: 30px;
+      margin-bottom: 20px;
+    }
+
+    &__paragraph {
+      line-height: 20px;
+    }
   }
 }

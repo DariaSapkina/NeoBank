@@ -2,3 +2,16 @@
   padding-top: 132px;
   padding-bottom: 98px;
 }
+
+@media (max-width: 1339px) {
+  .homePage {
+    padding: 132px 20px 98px 20px;
+  }
+}
+
+@media (max-width: 875px) {
+  .homePage {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
