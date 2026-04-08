@@ -1,13 +1,16 @@
+import type { FC } from "react";
 import { Link } from "react-router-dom";
-import { CURRENCIES_FROM } from "./currencyConst";
-import { getDate } from "@/utils/getDate";
-import { useCurrency } from "@/hooks/useCurrency";
+import { CURRENCIES_FROM } from "./currency.constants";
+import type { TCurrency } from "@/api";
 import "./ExchangeRate.scss";
 
-const ExchangeRate = () => {
-  const date = getDate();
-  const { data, loading } = useCurrency();
+export interface IExchangeRateProps {
+  data: TCurrency;
+  loading: boolean;
+  date: string;
+};
 
+const ExchangeRate: FC<IExchangeRateProps> = ({ data, loading, date }) => {
   return (
     <article className="exchangeRate">
       <div className="exchangeRate__titleWrapper">
@@ -19,11 +22,11 @@ const ExchangeRate = () => {
       </div>
       <span className="exchangeRate__label">Currency</span>
       <ul className="exchangeRate__list">
-        {CURRENCIES_FROM.map((currency) => {
-          const rate = data[currency]?.conversion_rate;
+        {CURRENCIES_FROM.map(({ name, id }) => {
+          const rate = data[name]?.conversion_rate;
           return (
-            <li key={currency} className="exchangeRate__listItem">
-              <span className="exchangeRate__currencyName">{currency}:</span>
+            <li key={id} className="exchangeRate__listItem">
+              <span className="exchangeRate__currencyName">{name}:</span>
               <span className="exchangeRate__rate">
                 {loading
                   ? "Loading..."

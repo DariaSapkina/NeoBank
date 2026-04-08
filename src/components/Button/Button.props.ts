@@ -1,6 +1,8 @@
 export type IButtonProps = {
   title: string;
-  variant?: "rounded" | "less-rounded";
+  radius: "small" | "medium" | "large";
+  size: "small" | "medium" | "large";
   ariaLabel?: string;
   onClick?: () => void;
+  icon?: string;
 };

@@ -1,17 +1,15 @@
 .page {
-  &__background {
-    &_purple {
-      background-color: #f5f4ff;
-    }
-
-    &_grey {
-      background-color: rgba($color: #b2b2b2, $alpha: 0.3);
-    }
-  }
-
   &__layout {
     width: 100%;
     max-width: 1300px;
     margin: 0 auto;
+  }
+}
+
+.layout {
+  background-color: rgba($color: #b2b2b2, $alpha: 0.3);
+
+  &__top {
+    background-color: #f5f4ff;
   }
 }

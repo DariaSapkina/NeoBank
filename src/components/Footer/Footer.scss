@@ -1,4 +1,7 @@
+@use "@/styles" as *;
+
 .footer {
+  @include container;
   padding: 96px 0 92px 0;
 
   &__top {

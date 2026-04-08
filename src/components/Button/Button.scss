@@ -1,7 +1,6 @@
 .button {
   color: white;
-  background-color: #003cff;
-  padding: 16px 0;
+  background-color: hsl(226, 100%, 50%);
   border: none;
   font-size: 16px;
   font-weight: 600;
@@ -9,16 +8,69 @@
   width: 100%;
   transition: background-color 0.3s;
 
-  &_rounded {
+  &_radius-medium {
     border-radius: 16px;
   }
 
-  &_less-rounded {
+  &_radius-small {
     border-radius: 8px;
+  }
+
+  &_size-large {
+    height: 50px;
+  }
+
+  &_size-medium {
+    height: 45px;
+  }
+
+  &_size-small {
+    height: 40px;
+  }
+
+  &_radius-large {
+    border-radius: 20px;
+  }
+
+  &_hasIcon {
+    background-color: #676df1;
+    position: relative;
+    padding-left: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+
+    & img {
+      transform: translateY(-3px);
+      height: 40px;
+    }
   }
 
   &:hover {
     cursor: pointer;
     background-color: #7796c0;
+  }
+}
+
+@media (max-width: 596px) {
+  .button {
+    &_hasIcon {
+      justify-content: center;
+      padding: 0;
+      border-radius: 50%;
+
+      & span {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .button {
+    &_hasIcon {
+      height: 40px;
+    }
   }
 }
