@@ -68,31 +68,8 @@
     letter-spacing: 2px;
   }
 
-  &__button {
-    background-color: #676df1;
-    border-radius: 20px;
+  &__buttonWrapper {
     width: 162px;
-    height: 45px;
-    border: none;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
-    position: relative;
-    transition: background-color 0.3s;
-    padding-left: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    gap: 10px;
-
-    & img {
-      height: 40px;
-    }
-
-    &:hover {
-      background-color: #7796c0;
-      cursor: pointer;
-    }
   }
 }
 
@@ -103,15 +80,8 @@
       padding-right: 10px;
     }
 
-    &__button {
+    &__buttonWrapper {
       width: 45px;
-      justify-content: center;
-      padding: 0;
-      border-radius: 50%;
-
-      & span {
-        display: none;
-      }
     }
   }
 }
@@ -138,11 +108,6 @@
 
     &__input {
       width: 100%;
-    }
-
-    &__button {
-      width: 40px;
-      height: 40px;
     }
   }
 }

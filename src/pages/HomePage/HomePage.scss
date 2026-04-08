@@ -1,4 +1,7 @@
+@use "@/styles" as *;
+
 .homePage {
+  @include container;
   padding-top: 132px;
   padding-bottom: 98px;
 }

@@ -1,14 +1,14 @@
 import illustrationHomePage from "@/assets/IllustrationHomePage.svg";
 import "./FeatureSection.scss";
 
-const FeatureSection = () => {
-  const featureList = [
-    "Powerfull online protection.",
-    "Cashback without borders.",
-    "Personal design.",
-    "Work anywhere in the world.",
-  ];
+const FEATURE_LIST = [
+  { id: 1, title: "Powerfull online protection." },
+  { id: 2, title: "Cashback without borders." },
+  { id: 3, title: "Personal design." },
+  { id: 4, title: "Work anywhere in the world." },
+];
 
+const FeatureSection = () => {
   return (
     <section className="featureSection">
       <div className="featureSection__imgWrapper">
@@ -23,9 +23,9 @@ const FeatureSection = () => {
           own functions each feature
         </p>
         <ul className="featureSection__list">
-          {featureList.map((item) => (
-            <li className="featureSection__listItem" key={item}>
-              {item}
+          {FEATURE_LIST.map(({id, title}) => (
+            <li className="featureSection__listItem" key={id}>
+              {title}
             </li>
           ))}
         </ul>

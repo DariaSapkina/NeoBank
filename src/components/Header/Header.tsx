@@ -1,39 +1,38 @@
 import { Link } from "react-router-dom";
-import { Button } from "@/components/Button/Button";
-import { AppRoutes, RoutePath } from "@/router/routeConfig";
-import { BurgerMenu } from "@/components/BurgerMenu/BurgerMenu";
-import type { TNavItem } from "@/components/BurgerMenu/BurgerMenu.props";
+import { Button, BurgerMenu, type TNavItem } from "@/components";
+import { AppRoutes, RoutePath } from "@/router";
 import "./Header.scss";
 
-const Header = () => {
-  const links: TNavItem[] = [
-    { label: "Credit card", href: "#" },
-    { label: "Product", href: "#" },
-    { label: "Account", href: "#" },
-    { label: "Resources", href: "#" },
-  ];
+const LINKS: TNavItem[] = [
+  { id: 1, label: "Credit card", href: "#" },
+  { id: 2, label: "Product", href: "#" },
+  { id: 3, label: "Account", href: "#" },
+  { id: 4, label: "Resources", href: "#" },
+];
 
+const Header = () => {
   return (
-    <header className="header">
+    <header className="header container">
       <div className="header__title">
         <Link to={RoutePath[AppRoutes.HOME]}>NeoBank</Link>
       </div>
       <nav className="header__navigation">
         <ul className="header__list">
-          {links.map(({ label, href }) => (
-            <li className="header__listItem" key={label}>
+          {LINKS.map(({ id, label, href }) => (
+            <li className="header__listItem" key={id}>
               <Link to={href}>{label}</Link>
             </li>
           ))}
         </ul>
       </nav>
       <div className="header__burgerWrapper">
-        <BurgerMenu items={links} />
+        <BurgerMenu items={LINKS} />
       </div>
       <div className="header__button">
         <Button
           title="Online Bank"
-          variant="rounded"
+          radius="medium"
+          size="large"
           ariaLabel="Go to Online Bank"
         />
       </div>

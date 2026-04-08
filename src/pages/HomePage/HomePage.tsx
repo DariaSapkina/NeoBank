@@ -1,8 +1,10 @@
-import { HeroSection } from "./components/HeroSection/HeroSection";
-import { FeatureSection } from "./components/FeatureSection/FeatureSection";
-import { ExchangeRateSection } from "./components/ExchangeRateSection/ExchangeRateSection";
-import { CoverageSection } from "./components/CoverageSection/CoverageSection";
-import { SubscribeSection } from "./components/SubscribeSection/SubscribeSection";
+import {
+  HeroSection,
+  FeatureSection,
+  ExchangeRateSection,
+  CoverageSection,
+  SubscribeSection,
+} from "./components";
 import "./HomePage.scss";
 
 const HomePage = () => {

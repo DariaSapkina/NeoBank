@@ -1,23 +1,20 @@
-import type { FC } from "react";
-import { Header } from "@/components/Header/Header";
-import { Footer } from "@/components/Footer/Footer";
-import type { ILayoutProps } from "./Layout.props";
+import type { FC, ReactNode } from "react";
+import { Header } from "@/components";
+import { Footer } from "@/components";
 import "./Layout.scss";
+
+export interface ILayoutProps {
+  children: ReactNode;
+};
 
 const Layout: FC<ILayoutProps> = ({ children }) => {
   return (
-    <div className="page">
-      <div className="page__background page__background_purple">
-        <div className="page__layout">
-          <Header />
-          <main>{children}</main>
-        </div>
+    <div className="layout">
+      <div className="layout__top">
+        <Header />
+        <main>{children}</main>
       </div>
-      <div className="page__background page__background_grey">
-        <div className="page__layout">
-          <Footer />
-        </div>
-      </div>
+      <Footer />
     </div>
   );
 };

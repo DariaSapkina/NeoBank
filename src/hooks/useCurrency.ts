@@ -1,40 +1,15 @@
 import { useEffect, useState } from "react";
-import {
-  getAllCurrency,
-  type ICurrencyResponse,
-} from "@/components/ExchangeRate/getCurrency";
-import {
-  URL,
-  API_KEY,
-  CURRENCIES_FROM,
-  CURRENCY_TO,
-  refreshIntervalMs,
-} from "@/components/ExchangeRate/currencyConst";
-
-type TCurrencyData = Record<string, ICurrencyResponse | null>;
+import { REFRESH_INTERVAL_MS } from "@/components";
+import { loadCurrency, type TCurrencyData } from "@/utils";
 
 export const useCurrency = () => {
   const [data, setData] = useState<TCurrencyData>({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const load = async () => {
-      const res = await getAllCurrency(
-        URL,
-        API_KEY,
-        CURRENCY_TO,
-        CURRENCIES_FROM,
-      );
-      if (res) {
-        setData(res);
-        setLoading(false);
-        console.log("Обновили валюту:", res);
-      }
-    };
+    loadCurrency(setData, setLoading);
 
-    load();
-
-    const interval = setInterval(load, refreshIntervalMs);
+    const interval = setInterval(loadCurrency, REFRESH_INTERVAL_MS);
 
     return () => clearInterval(interval);
   }, []);

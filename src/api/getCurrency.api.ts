@@ -2,9 +2,11 @@ import axios from "axios";
 
 export interface ICurrencyResponse {
   conversion_rate: number;
-}
+};
 
-export async function getCurrency(
+export type TCurrency = Record<string, ICurrencyResponse | null>;
+
+async function getCurrency(
   url: string,
   apiKey: string,
   toCurrency: string,
@@ -26,27 +28,32 @@ export async function getCurrency(
   }
 }
 
+type TFromCurrency = {
+  id: number;
+  name: string;
+};
+
 export async function getAllCurrency(
   url: string,
   apiKey: string,
   toCurrency: string,
-  fromCurrencies: string[],
+  fromCurrencies: TFromCurrency[],
 ) {
   if (!toCurrency || fromCurrencies.length === 0) return;
 
   const promises = fromCurrencies.map((currency) =>
-    getCurrency(url, apiKey, toCurrency, currency),
+    getCurrency(url, apiKey, toCurrency, currency.name),
   );
 
   const res = await Promise.allSettled(promises);
-  const data: Record<string, ICurrencyResponse | null> = {};
+  const data: TCurrency = {};
 
   res.forEach((result, index) => {
     const currency = fromCurrencies[index];
     if (result.status === "fulfilled") {
-      data[currency] = result.value;
+      data[currency.name] = result.value;
     } else {
-      data[currency] = null;
+      data[currency.name] = null;
     }
   });
 
