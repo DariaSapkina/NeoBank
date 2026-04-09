@@ -29,7 +29,7 @@ const BurgerMenu: FC<IBurgerMenuProps> = ({ items }) => {
         {isOpen ? "✕" : "☰"}
       </button>
       <ul
-        className={`burgerMenu__list ${isOpen ? "burgerMenu__list_open" : ""}`}
+        className={`burgerMenu__list ${isOpen && "burgerMenu__list_open"}`}
       >
         {items.map(({ id, label, href }) => (
           <li className="burgerMenu__listItem" key={id}>

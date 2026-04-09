@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { REFRESH_INTERVAL_MS } from "@/components";
+import { REFRESH_INTERVAL_MS } from "@/constants";
 import { loadCurrency, type TCurrencyData } from "@/utils";
 
 export const useCurrency = () => {

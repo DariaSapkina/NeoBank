@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { Link } from "react-router-dom";
-import { CURRENCIES_FROM } from "./currency.constants";
+import { CURRENCIES_FROM } from "@/constants";
 import type { TCurrency } from "@/api";
 import "./ExchangeRate.scss";
 
