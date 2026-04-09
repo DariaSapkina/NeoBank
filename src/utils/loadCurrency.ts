@@ -1,5 +1,5 @@
-import { CURRENCIES_FROM, CURRENCY_TO } from "@/components";
-import { URL, API_KEY, getAllCurrency, type ICurrencyResponse } from "@/api";
+import { CURRENCIES_FROM, CURRENCY_TO, URL, API_KEY } from "@/constants";
+import { getAllCurrency, type ICurrencyResponse } from "@/api";
 
 export type TCurrencyData = Record<string, ICurrencyResponse | null>;
 

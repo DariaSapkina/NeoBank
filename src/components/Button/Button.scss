@@ -8,28 +8,32 @@
   width: 100%;
   transition: background-color 0.3s;
 
-  &_radius-medium {
-    border-radius: 16px;
+  &_radius {
+    &_small {
+      border-radius: 8px;
+    }
+
+    &_medium {
+      border-radius: 16px;
+    }
+
+    &_large {
+      border-radius: 20px;
+    }
   }
 
-  &_radius-small {
-    border-radius: 8px;
-  }
+  &_size {
+    &_small {
+      height: 40px;
+    }
 
-  &_size-large {
-    height: 50px;
-  }
+    &_medium {
+      height: 45px;
+    }
 
-  &_size-medium {
-    height: 45px;
-  }
-
-  &_size-small {
-    height: 40px;
-  }
-
-  &_radius-large {
-    border-radius: 20px;
+    &_large {
+      height: 50px;
+    }
   }
 
   &_hasIcon {

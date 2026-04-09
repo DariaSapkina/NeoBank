@@ -26,7 +26,7 @@ async function getCurrency(
     }
     return null;
   }
-}
+};
 
 type TFromCurrency = {
   id: number;
@@ -58,4 +58,4 @@ export async function getAllCurrency(
   });
 
   return data;
-}
+};
