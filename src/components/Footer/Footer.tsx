@@ -17,7 +17,7 @@ const LIST_ITEMS = [
 
 const Footer = () => {
   return (
-    <footer className="footer container">
+    <footer className="footer">
       <div className="footer__top">
         <Link to="https://www.neoflex.ru/" className="footer__logo">
           <img src={logo} alt="Neoflex home page" />

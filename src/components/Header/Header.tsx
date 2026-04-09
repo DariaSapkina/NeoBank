@@ -12,7 +12,7 @@ const LINKS: TNavItem[] = [
 
 const Header = () => {
   return (
-    <header className="header container">
+    <header className="header">
       <div className="header__title">
         <Link to={RoutePath[AppRoutes.HOME]}>NeoBank</Link>
       </div>
