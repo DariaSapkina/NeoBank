@@ -1,0 +1,38 @@
+.sliderButton {
+  height: 64px;
+  width: 64px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  outline: none;
+  background-color: #003cff;
+  cursor: pointer;
+
+  &__img {
+    color: white;
+
+    &_next {
+      transform: scaleX(-1);
+    }
+  }
+
+  &:hover {
+    background-color: #0130cb;
+  }
+
+  &_disable {
+    background-color: white;
+    border: 1px solid #003cff;
+
+    & .sliderButton__img {
+      color: black;
+    }
+
+    &:hover {
+      cursor: not-allowed;
+      background-color: white;
+    }
+  }
+}

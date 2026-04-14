@@ -3,3 +3,5 @@ export {
   type TCurrency,
   getAllCurrency,
 } from "./getCurrency.api";
+
+export { getNews, type INews, type INewsResponse } from "./getNews.api";

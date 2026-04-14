@@ -1,0 +1,38 @@
+.sliderSection {
+  margin-bottom: 64px;
+
+  &__title {
+    color: #000000;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 50px;
+    margin-bottom: 8px;
+  }
+
+  &__description {
+    color: #2d3748;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 50px;
+    margin-bottom: 46px;
+  }
+}
+
+@media (max-width: 862px) {
+  .sliderSection {
+    &__description {
+      line-height: 30px;
+    }
+  }
+}
+
+@media (max-width: 605px) {
+  .sliderSection {
+    &__title {
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+  }
+}

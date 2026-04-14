@@ -1,4 +1,4 @@
-export { URL, API_KEY } from "./api.constants";
+export { URL, API_KEY, URL_NEWS, API_KEY_NEWS } from "./api.constants";
 export {
   CURRENCIES_FROM,
   CURRENCY_TO,
