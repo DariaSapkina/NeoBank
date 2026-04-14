@@ -4,6 +4,7 @@ import {
   ExchangeRateSection,
   CoverageSection,
   SubscribeSection,
+  SliderSection,
 } from "./components";
 import "./HomePage.scss";
 
@@ -14,6 +15,7 @@ const HomePage = () => {
       <FeatureSection />
       <ExchangeRateSection />
       <CoverageSection />
+      <SliderSection />
       <SubscribeSection />
     </div>
   );
