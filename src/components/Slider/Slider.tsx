@@ -2,6 +2,7 @@ import { useRef, type FC } from "react";
 import type { INews } from "@/api";
 import { SliderCard, SliderButton } from "./components";
 import { useResizeObserver, useSlider } from "@/hooks";
+import { truncateText } from "@/utils";
 import "./Slider.scss";
 
 interface ISliderProps {
@@ -32,8 +33,8 @@ const Slider: FC<ISliderProps> = ({ articles }) => {
         {articles.map((item, index) => (
           <li key={index} className="slider__card">
             <SliderCard
-              title={item.title}
-              description={item.description}
+              title={truncateText(item.title, 60)}
+              description={truncateText(item.description, 90)}
               url={item.url}
               urlToImage={item.urlToImage}
               width={cardParams.cardWidth}
