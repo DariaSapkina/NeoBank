@@ -18,6 +18,11 @@
     line-height: 50px;
     margin-bottom: 46px;
   }
+
+  &__spinner {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 862px) {

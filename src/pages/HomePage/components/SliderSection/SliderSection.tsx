@@ -1,9 +1,9 @@
-import { Slider } from "@/components";
+import { Slider, Spinner } from "@/components";
 import { useNews } from "@/hooks";
 import "./SliderSection.scss";
 
 const SliderSection = () => {
-  const { data } = useNews();
+  const { data, loading } = useNews();
 
   return (
     <section className="sliderSection">
@@ -15,7 +15,13 @@ const SliderSection = () => {
         on the news you are interested in.
       </p>
       <div className="sliderSection__sliderWrapper">
-        <Slider articles={data?.articles || []} />
+        {loading ? (
+          <div className="sliderSection__spinner">
+            <Spinner />
+          </div>
+        ) : (
+          <Slider articles={data?.articles || []} />
+        )}
       </div>
     </section>
   );

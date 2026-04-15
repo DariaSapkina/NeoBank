@@ -30,12 +30,11 @@
     color: black;
     font-weight: 500;
     line-height: 25px;
-    display: -webkit-box;
-    line-clamp: 3;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    min-height: 3.6em;
+    transition: all 0.3s;
+
+    &:hover {
+      color: rgb(77, 77, 77);
+    }
   }
 
   &__description {
@@ -45,11 +44,6 @@
     text-align: center;
     line-height: 23px;
     text-decoration: none;
-    display: -webkit-box;
-    line-clamp: 4;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
 }
 
