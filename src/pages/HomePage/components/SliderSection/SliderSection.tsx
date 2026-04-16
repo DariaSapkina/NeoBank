@@ -16,9 +16,7 @@ const SliderSection = () => {
       </p>
       <div className="sliderSection__sliderWrapper">
         {loading ? (
-          <div className="sliderSection__spinner">
             <Spinner />
-          </div>
         ) : (
           <Slider articles={data?.articles || []} />
         )}
