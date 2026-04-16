@@ -1,9 +1,9 @@
 import type { INews } from "@/api";
 
 function isCorrectImgUrl(src: string) {
-  const img = document.createElement("img");
+  const img = new Image(1,1);
   img.src = src;
-  return img.width && img.height;
+  return img.naturalHeight !== 0 && img.naturalWidth !== 0;
 };
 
 export async function filterArticles(data: INews[]) {
