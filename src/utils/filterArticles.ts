@@ -1,20 +1,14 @@
 import type { INews } from "@/api";
 
-function isCorrectImgUrl(src: string): Promise<boolean> {
-  return new Promise((resolve) => {
-    const img = new Image();
-
-    img.onload = () => resolve(true);
-    img.onerror = () => resolve(false);
-
-    img.src = src;
-  });
+function isCorrectImgUrl(src: string) {
+  const img = document.createElement("img");
+  img.src = src;
+  return img.width && img.height;
 };
 
 export async function filterArticles(data: INews[]) {
-  const cleanedArticles: INews[] = await Promise.all(
-    data.map(async (item) => {
-      const isValidImg = await isCorrectImgUrl(item.urlToImage);
+  const cleanedArticles: INews[] = data.map((item) => {
+      const isValidImg = isCorrectImgUrl(item.urlToImage);
       const imgUrl = isValidImg ? item.urlToImage : "";
       let description = item.description ?? "";
       const hasHtml = /<[^>]*>/.test(description);
@@ -25,8 +19,7 @@ export async function filterArticles(data: INews[]) {
         url: item.url,
         urlToImage: imgUrl,
       };
-    }),
-  );
+  });
   return cleanedArticles.filter(
     (item) => item.urlToImage !== "" && item.description !== "",
   );

@@ -1,6 +1,7 @@
 .sliderCard {
   text-align: center;
   width: 320px;
+  height: 448px;
   padding: 32px;
   background-color: white;
   box-shadow:
@@ -8,9 +9,8 @@
     0px 0px 8px 0px rgba(0, 0, 0, 0.07999999821186066);
   border-radius: 28px;
   border: 1px solid rgba(187, 187, 187, 0.07999999821186066);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-rows: 120px 104px 96px;
   gap: 32px;
 
   &__img {
@@ -51,6 +51,20 @@
   .sliderCard {
     &__img {
       width: 100%;
+    }
+  }
+}
+
+@media (max-width: 345px) {
+  .sliderCard {
+    &__title {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    &__description {
+      font-size: 14px;
+      font-weight: 500;
     }
   }
 }
