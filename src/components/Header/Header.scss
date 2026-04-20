@@ -26,7 +26,7 @@
     gap: 40px;
   }
 
-  &__listItem a {
+  &__link {
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 2%;
@@ -35,6 +35,10 @@
     transition: color 0.3s;
 
     &:hover {
+      color: #b2a35f;
+    }
+
+    &_active {
       color: #b2a35f;
     }
   }
