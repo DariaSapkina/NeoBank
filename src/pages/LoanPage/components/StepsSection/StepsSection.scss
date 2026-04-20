@@ -1,0 +1,88 @@
+.stepsSection {
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 147%;
+    margin-bottom: 14px;
+    text-align: center;
+  }
+
+  &__stepsList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+    margin-bottom: 44px;
+  }
+
+  &__step {
+    &:nth-child(1) {
+      width: 334px;
+    }
+    &:nth-child(2) {
+      width: 385px;
+      padding-left: 40px;
+    }
+
+    &:nth-child(3) {
+      width: 419px;
+    }
+  }
+
+  &__contentUp {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+
+  &__curcle {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d9d9d9;
+  }
+
+  &__stepNumber {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 147%;
+  }
+
+  &__line {
+    height: 2px;
+    width: 80%;
+    background-color: #8080802f;
+  }
+
+  &__stepDescription {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 147%;
+  }
+}
+
+@media (max-width: 1213px) {
+  .stepsSection {
+    &__stepsList {
+      gap: 40px;
+    }
+
+    &__step {
+      flex-grow: 1;
+
+      &:nth-child(2) {
+        padding-left: 0px;
+      }
+    }
+
+    &__contentUp {
+      margin-bottom: 5px;
+    }
+  }
+}
