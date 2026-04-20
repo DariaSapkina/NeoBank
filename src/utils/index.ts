@@ -3,3 +3,4 @@ export { getDate } from "./getDate";
 export { filterArticles } from "./filterArticles";
 export { sliderCardConfig } from "./sliderCardConfig";
 export { truncateText } from "./truncateText";
+export { emailValidate } from "./emailValidate";
