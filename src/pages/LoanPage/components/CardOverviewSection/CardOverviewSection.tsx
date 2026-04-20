@@ -1,22 +1,26 @@
 import "./CardOverviewSection.scss";
 import { Button } from "@/components";
 import cardImageLoanPage from "@/assets/cardImageLoanPage.png";
+import { Tooltip } from "@/components";
 
 const FEATURE_LIST = [
   {
     id: 1,
     value: "Up to 160 days",
     label: "No percent",
+    tooltip: "When repaying the full debt up to 160 days.",
   },
   {
     id: 2,
     value: "Up to 600 000 ₽",
     label: "Credit limit",
+    tooltip: "Over the limit willaccrue percent.",
   },
   {
     id: 3,
     value: "0 ₽",
     label: "Card service is free",
+    tooltip: "Promotion valid until December 31, 2022.",
   },
 ];
 
@@ -32,10 +36,12 @@ const CardOverviewSection = () => {
           Cash withdrawals and transfers without commission and interest.
         </p>
         <ul className="cardOverviewSection__featuresList">
-          {FEATURE_LIST.map(({ id, value, label }) => (
+          {FEATURE_LIST.map(({ id, value, label, tooltip }) => (
             <li className="cardOverviewSection__feature" key={id}>
-              <span className="cardOverviewSection__featureValue">{value}</span>
-              <span className="cardOverviewSection__featureLabel">{label}</span>
+              <Tooltip tooltip={tooltip}>
+                <p className="cardOverviewSection__featureValue">{value}</p>
+                <p className="cardOverviewSection__featureLabel">{label}</p>
+              </Tooltip>
             </li>
           ))}
         </ul>

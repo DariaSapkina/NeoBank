@@ -44,9 +44,6 @@
   }
 
   &__feature {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
     color: #3d3d3d;
   }
 
@@ -55,6 +52,7 @@
     font-weight: 600;
     letter-spacing: 2%;
     line-height: 112%;
+    margin-bottom: 8px;
   }
 
   &__featureLabel {

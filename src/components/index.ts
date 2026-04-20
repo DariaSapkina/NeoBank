@@ -11,3 +11,5 @@ export { Header } from "./Header";
 export { Slider } from "./Slider";
 
 export { Spinner } from "./Spinner";
+
+export { Tooltip } from "./Tooltip";
