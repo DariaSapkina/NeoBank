@@ -1,0 +1,30 @@
+.tooltip {
+  position: relative;
+  cursor: pointer;
+
+  &__text {
+    position: absolute;
+    width: 170px;
+    top: 110%;
+    right: 5%;
+    background-color: #3d3d3d;
+    color: white;
+    padding: 8px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 2%;
+    line-height: 100%;
+    z-index: 100;
+  }
+
+  &:hover,
+  &:focus {
+    color: black;
+
+    .tooltip__text {
+      opacity: 1;
+    }
+  }
+}

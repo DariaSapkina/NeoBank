@@ -1,16 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Button, BurgerMenu, type TNavItem } from "@/components";
 import { AppRoutes, RoutePath } from "@/router";
 import "./Header.scss";
 
-const LINKS: TNavItem[] = [
-  { id: 1, label: "Credit card", href: "#" },
-  { id: 2, label: "Product", href: "#" },
-  { id: 3, label: "Account", href: "#" },
-  { id: 4, label: "Resources", href: "#" },
-];
-
 const Header = () => {
+  const LINKS: TNavItem[] = [
+    { id: 1, label: "Credit card", href: RoutePath[AppRoutes.LOAN] },
+    { id: 2, label: "Product", href: "/product" },
+    { id: 3, label: "Account", href: "/account" },
+    { id: 4, label: "Resources", href: "/resorces" },
+  ];
+
   return (
     <header className="header">
       <div className="header__title">
@@ -20,7 +20,14 @@ const Header = () => {
         <ul className="header__list">
           {LINKS.map(({ id, label, href }) => (
             <li className="header__listItem" key={id}>
-              <Link to={href}>{label}</Link>
+              <NavLink
+                to={href}
+                className={({ isActive }) =>
+                  isActive ? "header__link header__link_active" : "header__link"
+                }
+              >
+                {label}
+              </NavLink>
             </li>
           ))}
         </ul>
