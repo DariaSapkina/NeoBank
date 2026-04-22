@@ -1,0 +1,17 @@
+.tabFAQ {
+  padding-top: 32px;
+  list-style: none;
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 147%;
+    padding-bottom: 32px;
+  }
+}

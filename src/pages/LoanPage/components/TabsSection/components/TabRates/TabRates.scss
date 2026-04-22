@@ -1,0 +1,40 @@
+.tabRates {
+  padding-top: 40px;
+
+  &__row {
+    display: grid;
+    grid-template-columns: 257px 1fr;
+    gap: 69px;
+    &:not(:first-child) {
+      padding-top: 24px;
+    }
+    &:not(:last-child) {
+      padding-bottom: 24px;
+      border-bottom: 1px solid #7f92ac;
+    }
+  }
+
+  &__label {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2%;
+    line-height: 100%;
+  }
+
+  &__values {
+    color: #434343;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2%;
+    line-height: 100%;
+  }
+}
+
+@media (max-width: 563px) {
+  .tabRates {
+    &__row {
+      gap: 10px;
+      grid-template-columns: 120px 1fr;
+    }
+  }
+}
