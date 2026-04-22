@@ -1,0 +1,31 @@
+.aboutCard {
+  width: 406px;
+  border-radius: 28px;
+  flex-grow: 1;
+  background-color: #eaecee;
+  border-radius: 28px;
+  padding: 32px;
+
+  &:nth-child(2n) {
+    background-color: #7f92acd0;
+  }
+
+  &__icon {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2%;
+    line-height: 147%;
+  }
+
+  &__description {
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 2%;
+    line-height: 100%;
+  }
+}

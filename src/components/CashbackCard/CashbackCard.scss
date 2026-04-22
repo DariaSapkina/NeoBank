@@ -1,0 +1,28 @@
+.cashbackCard {
+  width: 406px;
+  min-height: 163px;
+  border-radius: 28px;
+  flex-grow: 1;
+  background-color: #eaecee;
+  border-radius: 28px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  &:nth-child(2n) {
+    background-color: #88b3b89a;
+  }
+
+  &__category {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 147%;
+  }
+
+  &__value {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 147%;
+  }
+}

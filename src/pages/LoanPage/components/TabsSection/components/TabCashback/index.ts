@@ -1,0 +1,1 @@
+export { TabCashback } from "./TabCashback";
