@@ -54,6 +54,7 @@ const SubscribeSection = () => {
                 radius="large"
                 size="medium"
                 icon={sendIcon}
+                type="submit"
               />
             </div>
           </>

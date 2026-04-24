@@ -1,5 +1,10 @@
 import "./LoanPage.scss";
-import { CardOverviewSection, StepsSection, TabsSection } from "./components";
+import {
+  CardOverviewSection,
+  StepsSection,
+  TabsSection,
+  FormSection,
+} from "./components";
 
 const LoanPage = () => {
   return (
@@ -7,6 +12,7 @@ const LoanPage = () => {
       <CardOverviewSection />
       <TabsSection />
       <StepsSection />
+      <FormSection />
     </div>
   );
 };

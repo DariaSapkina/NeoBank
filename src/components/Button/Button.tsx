@@ -10,6 +10,7 @@ const Button: FC<IButtonProps> = ({
   ariaLabel,
   onClick,
   icon,
+  type,
 }) => {
   const buttonClass = clsx(
     "button",
@@ -27,7 +28,12 @@ const Button: FC<IButtonProps> = ({
   );
 
   return (
-    <button className={buttonClass} onClick={onClick} aria-label={ariaLabel}>
+    <button
+      className={buttonClass}
+      onClick={onClick}
+      aria-label={ariaLabel}
+      type={type || "button"}
+    >
       {icon && <img src={icon} alt="" />}
       <span>{title}</span>
     </button>

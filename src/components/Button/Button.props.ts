@@ -5,4 +5,5 @@ export type IButtonProps = {
   ariaLabel?: string;
   onClick?: () => void;
   icon?: string;
+  type?: "submit" | "reset";
 };

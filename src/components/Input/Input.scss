@@ -1,0 +1,76 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  &__label {
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+
+    &_required {
+      &::after {
+        content: "*";
+        color: #ff0000;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  &__wrapperAfter {
+    position: relative;
+
+    &::after {
+      content: "";
+      width: 24px;
+      height: 24px;
+      position: absolute;
+      transform: translateY(-50%);
+      top: 50%;
+      right: 10px;
+    }
+
+    &_error {
+      &::after {
+        background: url("../../assets/Close_round_fill.svg");
+      }
+    }
+
+    &_success {
+      &::after {
+        background: url("../../assets/Check_fill.svg");
+      }
+    }
+  }
+
+  &__field {
+    width: 297px;
+    height: 40px;
+    background-color: #f9f5e3;
+    border: 1px solid #80808037;
+    border-radius: 6px;
+    padding-left: 16px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #808080;
+    outline: none;
+    position: relative;
+    transition: all 0.3s;
+    position: relative;
+
+    &:focus {
+      border: 2px solid #5b35d5;
+    }
+
+    &_error {
+      border: 2px solid #ff5631;
+    }
+  }
+
+  &__error {
+    color: #ff0000;
+    font-size: 16px;
+    font-weight: 500;
+    transform: translateY(-8px);
+  }
+}
