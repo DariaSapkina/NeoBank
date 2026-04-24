@@ -21,3 +21,14 @@ export { AboutCard } from "./AboutCard";
 export { CashbackCard } from "./CashbackCard";
 
 export { Accordion, type IFAQ } from "./Accordion";
+
+export {
+  Input,
+  type TInputOption,
+  type IFormInput,
+  type IInputBase,
+} from "./Input";
+
+export { Amount } from "./Amount";
+
+export { FormFields } from "./FormFields";

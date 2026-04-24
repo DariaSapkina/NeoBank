@@ -1,0 +1,15 @@
+.formFields {
+  border: none;
+
+  &__groupTitle {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 26px;
+  }
+
+  &__fieldGroup {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+}
