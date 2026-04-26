@@ -8,17 +8,15 @@ interface IAmountProps {
   maxValue: number;
   minValue: number;
   step: number;
-}
+};
 
 const Amount: FC<IAmountProps> = ({ maxValue, minValue, step }) => {
   const { values, setFieldValue, errors } = useFormikContext<IFormInput>();
-
   const percentage = ((values.amount - minValue) / (maxValue - minValue)) * 100;
+
   return (
-    <fieldset className="amount">
-      <div
-        className={`amount__border ${errors.amount && "amount__border_error"}`}
-      >
+    <div className={`amount ${errors.amount && "amount_error"}`}>
+      <fieldset className="amount__fieldset">
         <legend className="amount__title">Select amount</legend>
         <input
           className="amount__value"
@@ -46,8 +44,8 @@ const Amount: FC<IAmountProps> = ({ maxValue, minValue, step }) => {
           <span className="amount__min">{formatNumber(minValue)}</span>
           <span className="amount__max">{formatNumber(maxValue)}</span>
         </div>
-      </div>
-    </fieldset>
+      </fieldset>
+    </div>
   );
 };
 

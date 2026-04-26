@@ -3,7 +3,7 @@ import type { IFormInput, IInputBase } from "@/components";
 export interface IInputs extends IInputBase {
   type?: "text" | "email" | "date";
   name: keyof IFormInput;
-}
+};
 
 export const INPUTS_INFO: IInputs[] = [
   {

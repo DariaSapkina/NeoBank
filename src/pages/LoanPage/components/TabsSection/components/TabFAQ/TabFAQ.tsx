@@ -1,6 +1,6 @@
 import { useState } from "react";
-import "./TabFAQ.scss";
 import { Accordion, type IFAQ } from "@/components";
+import "./TabFAQ.scss";
 
 const FAQ_SECTION_1: IFAQ[] = [
   {

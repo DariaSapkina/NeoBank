@@ -33,11 +33,7 @@ const FormSection = () => {
               </p>
             </div>
           </div>
-          <FormFields
-            values={formik.values}
-            inputs={INPUTS_INFO}
-            legend="Contact Information"
-          />
+          <FormFields inputs={INPUTS_INFO} legend="Contact Information" />
           <div className="formSection__buttonWrapper">
             <Button
               type="submit"

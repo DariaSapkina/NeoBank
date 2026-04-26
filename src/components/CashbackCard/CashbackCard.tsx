@@ -4,7 +4,7 @@ import "./CashbackCard.scss";
 export interface ICashbackCardProps {
   category: string;
   value: string;
-}
+};
 
 const CashbackCard: FC<ICashbackCardProps> = ({ category, value }) => {
   return (

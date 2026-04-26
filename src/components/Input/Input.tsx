@@ -1,7 +1,7 @@
-import { useFormikContext } from "formik";
 import type { FC } from "react";
+import { useFormikContext } from "formik";
 import type { IInputProps, IFormInput } from "./Input.props";
-import { renderFieldFormFirstStep } from "@/utils";
+import { renderField } from "@/utils";
 import "./Input.scss";
 
 const Input: FC<IInputProps> = ({
@@ -11,11 +11,11 @@ const Input: FC<IInputProps> = ({
   label,
   tag,
   options,
-  value,
   name,
   required,
 }) => {
-  const { submitCount, setFieldValue, errors } = useFormikContext<IFormInput>();
+  const { submitCount, setFieldValue, errors, values } =
+    useFormikContext<IFormInput>();
 
   const isSubmitted = (submitCount ?? 0) > 0;
   const isError = Boolean(errors[name as keyof IFormInput]);
@@ -29,13 +29,13 @@ const Input: FC<IInputProps> = ({
       >
         {label}
       </label>
-      {renderFieldFormFirstStep(
+      {renderField(
         tag,
         isError,
         isSuccess,
         id,
         name,
-        value,
+        values[name as keyof IFormInput],
         setFieldValue,
         errors,
         options,

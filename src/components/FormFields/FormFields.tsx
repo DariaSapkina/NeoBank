@@ -1,16 +1,14 @@
-import { Input } from "../Input";
-import "./FormFields.scss";
 import type { FC } from "react";
+import { Input } from "@/components";
 import type { IInputs } from "@/constants";
-import type { FormikValues } from "formik";
+import "./FormFields.scss";
 
 interface IFormField {
   legend: string;
   inputs: IInputs[];
-  values: FormikValues;
-}
+};
 
-const FormFields: FC<IFormField> = ({ inputs, legend, values }) => {
+const FormFields: FC<IFormField> = ({ inputs, legend }) => {
   return (
     <fieldset className="formFields">
       <legend className="formFields__groupTitle">{legend}</legend>
@@ -24,7 +22,6 @@ const FormFields: FC<IFormField> = ({ inputs, legend, values }) => {
             name={item.name}
             tag={item.tag}
             options={item.options}
-            value={values[item.name]}
             required={item.required}
             placeholder={item.placeholder}
           />

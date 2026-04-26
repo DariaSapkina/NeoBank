@@ -1,14 +1,15 @@
 .amount {
-  border: none;
+  padding: 24px 24px 41px 24px;
+  border: 1px solid #5b35d5;
+  border-radius: 10px;
 
-  &__border {
-    padding: 24px 24px 41px 24px;
-    border: 1px solid #5b35d5;
-    border-radius: 10px;
+  &_error {
+    border: 2px solid #ff5631;
+  }
 
-    &_error {
-      border: 2px solid #ff5631;
-    }
+  &__fieldset {
+    border: none;
+    min-width: 0px;
   }
 
   &__title {
@@ -27,6 +28,7 @@
 
   &__field {
     width: 100%;
+    min-width: 0;
 
     &::-webkit-slider-runnable-track {
       height: 2px;

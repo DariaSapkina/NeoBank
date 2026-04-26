@@ -1,7 +1,7 @@
-import "./CardOverviewSection.scss";
-import { Button } from "@/components";
 import cardImageLoanPage from "@/assets/cardImageLoanPage.png";
-import { Tooltip } from "@/components";
+import { Tooltip, Button } from "@/components";
+import "./CardOverviewSection.scss";
+import type { FC } from "react";
 
 const FEATURE_LIST = [
   {
@@ -24,7 +24,11 @@ const FEATURE_LIST = [
   },
 ];
 
-const CardOverviewSection = () => {
+interface ICardOverviewProps {
+  onApplyClick: () => void;
+};
+
+const CardOverviewSection: FC<ICardOverviewProps> = ({ onApplyClick }) => {
   return (
     <section className="cardOverviewSection">
       <div className="cardOverviewSection__content">
@@ -46,7 +50,7 @@ const CardOverviewSection = () => {
           ))}
         </ul>
         <div className="cardOverviewSection__buttonWrapper">
-          <Button title="Apply for card" radius="small" size="large" />
+          <Button title="Apply for card" radius="small" size="large" onClick={onApplyClick}/>
         </div>
       </div>
       <div className="cardOverviewSection__img">

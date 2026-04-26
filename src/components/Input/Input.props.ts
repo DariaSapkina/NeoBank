@@ -3,12 +3,12 @@ export interface IFormInput {
   term: number;
   firstName: string;
   lastName: string;
-  middleName: string | null;
+  middleName: string;
   email: string;
   birthdate: string;
   passportSeries: string;
   passportNumber: string;
-}
+};
 
 export type TInputOption = {
   title: string;
@@ -24,10 +24,9 @@ export interface IInputBase {
   required?: boolean;
   tag: InputTag;
   options?: TInputOption[];
-}
+};
 
 export interface IInputProps extends IInputBase {
   type?: string;
   name: string;
-  value: string;
-}
+};

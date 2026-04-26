@@ -1,10 +1,13 @@
-import { validateFormFirstStep } from "@/utils";
-import axios from "axios";
-import { useFormik } from "formik";
 import { useState } from "react";
+import { useFormik } from "formik";
+import { validateFormFirstStep, prepareDataFormFirstStep } from "@/utils";
+import type { IFormInput } from "@/components";
+import { sendFirstStepForm, type IRequestFirstStep } from "@/api";
 
 const useFormFirstStep = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [offers, setOffers] = useState<IRequestFirstStep[] | undefined>([]);
+
   const formik = useFormik({
     initialValues: {
       amount: 150000,
@@ -20,34 +23,18 @@ const useFormFirstStep = () => {
     validate: validateFormFirstStep,
     validateOnChange: false,
     onSubmit: async (values) => {
-      const preparedValues = Object.fromEntries(
-        Object.entries(values).map(([key, value]) => {
-          if (typeof value === "string") {
-            value = value.trim();
-          }
-          if (key === "middleName") {
-            return [key, value === "" ? null : value];
-          }
-          if (key === "birthdate" && typeof value === "string") {
-            const date = new Date(value);
-            const day = String(date.getDate()).padStart(2, "0");
-            const month = String(date.getMonth() + 1).padStart(2, "0");
-            const year = date.getFullYear();
-            return [key, `${year}-${month}-${day}`];
-          }
+      setIsLoading(true);
+      const preparedValues: IFormInput = prepareDataFormFirstStep(values);
+      const res = await sendFirstStepForm(preparedValues);
 
-          return [key, value];
-        }),
-      ) as typeof values;
-      try {
-        await axios.post("http://localhost:8080/application", preparedValues);
-        setIsLoading(true);
-      } catch (e) {
-        console.log(e);
+      if (res) {
+        setOffers(res);
       }
+      
+      setIsLoading(false);
     },
   });
-  return { ...formik, isLoading };
+  return { ...formik, isLoading, offers };
 };
 
 export { useFormFirstStep };
