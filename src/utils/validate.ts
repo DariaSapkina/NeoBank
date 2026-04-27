@@ -1,5 +1,5 @@
-import type { IFormInput } from "@/components";
 import type { FormikErrors } from "formik";
+import type { IFormInput } from "@/components";
 
 const validateStringRegExp = (
   value: string,

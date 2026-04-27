@@ -5,7 +5,7 @@ import { useSubscribeNewsLetter } from "@/hooks";
 import "./SubscribeSection.scss";
 
 const SubscribeSection = () => {
-  const { isSubscribe, loading, error, handleSubscribe } =
+  const { isSubscribe, isLoading, error, handleSubscribe } =
     useSubscribeNewsLetter();
 
   const [email, setEmail] = useState("");
@@ -50,7 +50,7 @@ const SubscribeSection = () => {
             />
             <div className="subscribeSection__buttonWrapper">
               <Button
-                title={loading ? "Loading..." : "Subscribe"}
+                title={isLoading ? "Loading..." : "Subscribe"}
                 radius="large"
                 size="medium"
                 icon={sendIcon}

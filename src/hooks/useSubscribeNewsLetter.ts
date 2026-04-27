@@ -7,46 +7,42 @@ import { emailValidate } from "@/utils";
 import { subscribeNews } from "@/api";
 
 export const useSubscribeNewsLetter = () => {
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSubscribe, setIsSubscribe] = useState(
     () =>
       localStorage.getItem(SUBSCRIBE_NEWS_LETTER_KEY) ===
       SUBSCRIBE_NEWS_LETTER_VALUE,
   );
+  const [isLoading, setIsLoading] = useState(false);
 
   const subscribeToNewsletter = async (email: string) => {
     try {
-      await subscribeNews(email);
-
+      const res = await subscribeNews(email);
+      if (!res) {
+        setError("Failed to subscribe");
+        return false;
+      }
       localStorage.setItem(
         SUBSCRIBE_NEWS_LETTER_KEY,
         SUBSCRIBE_NEWS_LETTER_VALUE,
       );
-
       setIsSubscribe(true);
-
       return true;
-    } catch {
-      setError("Failed to subscribe");
-      return false;
     } finally {
-      setLoading(false);
+      setIsLoading(false);
     }
   };
 
   const handleSubscribe = (e: React.SubmitEvent, email: string) => {
     e.preventDefault();
-    setLoading(true);
-
+    setIsLoading(true);
     const emailError = emailValidate(email);
 
     if (emailError) {
       setError(emailError);
-      setLoading(false);
+      setIsLoading(false);
       return false;
     }
-
     setError(null);
 
     return subscribeToNewsletter(email);
@@ -55,7 +51,7 @@ export const useSubscribeNewsLetter = () => {
   return {
     isSubscribe,
     error,
-    loading,
     handleSubscribe,
+    isLoading,
   };
 };

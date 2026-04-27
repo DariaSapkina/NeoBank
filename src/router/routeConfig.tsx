@@ -4,7 +4,7 @@ import { HomePage, LoanPage } from "@/pages";
 export enum AppRoutes {
   HOME = "home",
   LOAN = "loan",
-}
+};
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.HOME]: "/",

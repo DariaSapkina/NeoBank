@@ -1,4 +1,3 @@
-import "./TabsSection.scss";
 import { Tabs, type ITab } from "@/components";
 import { TabAbout, TabCashback, TabRates, TabFAQ } from "./components";
 
@@ -26,11 +25,7 @@ const TABS: ITab[] = [
 ];
 
 const TabsSection = () => {
-  return (
-    <section className="tabsSection">
-      <Tabs tabs={TABS} />
-    </section>
-  );
+  return <Tabs tabs={TABS} />
 };
 
 export { TabsSection };

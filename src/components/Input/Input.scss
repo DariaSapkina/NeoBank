@@ -1,7 +1,10 @@
 .input {
   display: flex;
+  width: 297px;
   flex-direction: column;
   gap: 8px;
+  flex-grow: 1;
+  min-width: 0px;
 
   &__label {
     font-size: 16px;
@@ -44,7 +47,7 @@
   }
 
   &__field {
-    width: 297px;
+    width: 100%;
     height: 40px;
     background-color: #f9f5e3;
     border: 1px solid #80808037;
@@ -72,5 +75,11 @@
     font-size: 16px;
     font-weight: 500;
     transform: translateY(-8px);
+  }
+}
+
+@media (max-width: 435px) {
+  .input {
+    width: 100%;
   }
 }

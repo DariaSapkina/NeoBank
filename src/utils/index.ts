@@ -4,5 +4,6 @@ export { filterArticles } from "./filterArticles";
 export { sliderCardConfig } from "./sliderCardConfig";
 export { truncateText } from "./truncateText";
 export { emailValidate, validateFormFirstStep } from "./validate";
-export { renderFieldFormFirstStep } from "./renderFieldFormFirstStep";
+export { renderField } from "./renderFieldFormFirstStep";
 export { formatNumber } from "./formatNumber";
+export { prepareDataFormFirstStep } from "./prepareDataFormFirstStep";

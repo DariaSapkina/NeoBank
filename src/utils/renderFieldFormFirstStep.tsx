@@ -1,13 +1,13 @@
-import type { TInputOption, IFormInput } from "@/components";
 import type { FormikErrors } from "formik";
+import type { TInputOption, IFormInput } from "@/components";
 
-export const renderFieldFormFirstStep = (
+export const renderField = (
   tag: string,
   isError: boolean,
   isSuccess: boolean,
   id: string,
   name: string,
-  value: string,
+  value: string | number,
   setFieldValue: (name: string, value: string | number) => void,
   errors: FormikErrors<IFormInput>,
   options?: TInputOption[],

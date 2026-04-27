@@ -5,13 +5,13 @@ export interface IFAQ {
   id: string;
   question: string;
   answer: string;
-}
+};
 
 interface IAccordionProps {
   accordionData: IFAQ[];
   openId: string | null;
   handleToggel: (openId: string) => void;
-}
+};
 
 const Accordion: FC<IAccordionProps> = ({
   accordionData,
@@ -24,7 +24,7 @@ const Accordion: FC<IAccordionProps> = ({
         <li key={id} className="accordion__item">
           <button
             className={`accordion__question ${openId === id && "accordion__question_open"}`}
-            aria-label="Open the answer"
+            aria-label={`Open answer: ${question}`}
             onClick={() => handleToggel(id)}
           >
             {question}

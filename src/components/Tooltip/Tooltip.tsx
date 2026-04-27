@@ -4,13 +4,15 @@ import "./Tooltip.scss";
 interface ITooltipProps {
   tooltip: string;
   children: ReactNode;
-}
+};
 
 const Tooltip: FC<ITooltipProps> = ({ tooltip, children }) => {
   return (
     <div className="tooltip" tabIndex={0}>
       {children}
-      <span className="tooltip__text">{tooltip}</span>
+      <span className="tooltip__text" role="tooltip">
+        {tooltip}
+      </span>
     </div>
   );
 };

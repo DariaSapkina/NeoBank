@@ -5,7 +5,7 @@ export interface IAboutCardProps {
   icon: string;
   title: string;
   description: string;
-}
+};
 
 const AboutCard: FC<IAboutCardProps> = ({ icon, title, description }) => {
   return (

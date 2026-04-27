@@ -1,10 +1,10 @@
-import "./TabAbout.scss";
 import { AboutCard } from "@/components";
 import Bag_duotone from "@/assets/Bag_duotone.svg";
 import Calendar_duotone from "@/assets/Calendar_duotone.svg";
 import Clock_duotone from "@/assets/Clock_duotone.svg";
 import Credit_card_duotone from "@/assets/Credit_card_duotone.svg";
 import Money_duotone from "@/assets/Money_duotone.svg";
+import "./TabAbout.scss";
 
 const ABOUT_CARDS = [
   {
