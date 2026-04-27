@@ -45,9 +45,11 @@ export const validateFormFirstStep = (
 ): FormikErrors<IFormInput> => {
   const errors: FormikErrors<IFormInput> = {};
 
-  if (!values.firstName) errors.firstName = "Enter your first name";
+  if (!values.firstName || values.firstName.length < 2)
+    errors.firstName = "Enter your first name";
 
-  if (!values.lastName) errors.lastName = "Enter your last name";
+  if (!values.lastName || values.lastName.length < 2)
+    errors.lastName = "Enter your last name";
 
   const emailError = emailValidate(values.email);
   if (emailError) errors.email = emailError;

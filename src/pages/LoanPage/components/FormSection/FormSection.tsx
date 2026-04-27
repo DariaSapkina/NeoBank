@@ -1,12 +1,24 @@
+import { useState, type ChangeEvent } from "react";
 import { FormikProvider } from "formik";
 import { Amount, FormFields, Button, Spinner } from "@/components";
-import { formatNumber } from "@/utils";
 import { INPUTS_INFO } from "@/constants";
 import { useFormFirstStep } from "@/hooks";
+import { formatNumber } from "@/utils";
 import "./FormSection.scss";
 
 const FormSection = () => {
   const formik = useFormFirstStep();
+  const [isFocusedAmountInput, setIsFocusedAmountInput] = useState(false);
+
+  const handleAmountChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value.replace(/\D/g, "");
+    formik.setFieldValue("amount", Number(value));
+  };
+
+  const displayAmountValue = (value: number, isFocused: boolean,) => {
+    if (isFocused) return value || "";
+    return formatNumber(value) + " ₽"
+  };
 
   return (
     <FormikProvider value={formik}>
@@ -28,9 +40,14 @@ const FormSection = () => {
               <p className="formSection__resultLabel">
                 You have chosen the amount
               </p>
-              <p className="formSection__resultValue">
-                {formatNumber(formik.values.amount)} ₽
-              </p>
+              <input
+                className="formSection__amountInput"
+                type="text"
+                value={displayAmountValue(formik.values.amount, isFocusedAmountInput)}
+                onFocus={() => setIsFocusedAmountInput(true)}
+                onBlur={() => setIsFocusedAmountInput(false)}
+                onChange={handleAmountChange}
+              />
             </div>
           </div>
           <FormFields inputs={INPUTS_INFO} legend="Contact Information" />

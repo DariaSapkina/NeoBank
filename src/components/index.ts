@@ -27,8 +27,11 @@ export {
   type TInputOption,
   type IFormInput,
   type IInputBase,
+  type IInputProps,
 } from "./Input";
 
 export { Amount } from "./Amount";
 
 export { FormFields } from "./FormFields";
+
+export { Select } from "./Select";

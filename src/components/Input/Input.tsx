@@ -1,7 +1,6 @@
 import type { FC } from "react";
 import { useFormikContext } from "formik";
 import type { IInputProps, IFormInput } from "./Input.props";
-import { renderField } from "@/utils";
 import "./Input.scss";
 
 const Input: FC<IInputProps> = ({
@@ -9,8 +8,6 @@ const Input: FC<IInputProps> = ({
   type,
   placeholder,
   label,
-  tag,
-  options,
   name,
   required,
 }) => {
@@ -29,18 +26,25 @@ const Input: FC<IInputProps> = ({
       >
         {label}
       </label>
-      {renderField(
-        tag,
-        isError,
-        isSuccess,
-        id,
-        name,
-        values[name as keyof IFormInput],
-        setFieldValue,
-        errors,
-        options,
-        type,
-        placeholder,
+      <div
+        className={`input__wrapperAfter 
+              ${isError && "input__wrapperAfter_error"} 
+              ${isSuccess && "input__wrapperAfter_success"}
+              `}
+      >
+        <input
+          className={`input__field ${isError && "input__field_error"} `}
+          id={id}
+          name={name}
+          type={type}
+          placeholder={placeholder}
+          value={values[name as keyof IFormInput]}
+          onChange={(e) => setFieldValue(name, e.target.value)}
+        />
+      </div>
+
+      {errors[name as keyof IFormInput] && (
+        <p className="input__error">{errors[name as keyof IFormInput]}</p>
       )}
     </div>
   );

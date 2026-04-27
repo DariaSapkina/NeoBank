@@ -15,14 +15,11 @@ export type TInputOption = {
   value: number;
 };
 
-type InputTag = "input" | "select";
-
 export interface IInputBase {
   id: string;
   placeholder?: string;
   label: string;
   required?: boolean;
-  tag: InputTag;
   options?: TInputOption[];
 };
 

@@ -18,12 +18,7 @@ const Amount: FC<IAmountProps> = ({ maxValue, minValue, step }) => {
     <div className={`amount ${errors.amount && "amount_error"}`}>
       <fieldset className="amount__fieldset">
         <legend className="amount__title">Select amount</legend>
-        <input
-          className="amount__value"
-          type="text"
-          value={values.amount}
-          onChange={(e) => setFieldValue("amount", Number(e.target.value))}
-        />
+        <p className="amount__value">{formatNumber(values.amount)}</p>
         <input
           style={
             {
