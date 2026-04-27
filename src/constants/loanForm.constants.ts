@@ -1,7 +1,10 @@
 import type { IFormInput, IInputBase } from "@/components";
 
+type TInputTag = "input" | "select";
+
 export interface IInputs extends IInputBase {
   type?: "text" | "email" | "date";
+  tag: TInputTag;
   name: keyof IFormInput;
 };
 

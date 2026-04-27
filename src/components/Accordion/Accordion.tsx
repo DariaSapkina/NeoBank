@@ -3,36 +3,36 @@ import "./Accordion.scss";
 
 export interface IFAQ {
   id: string;
-  question: string;
-  answer: string;
+  title: string;
+  content: string;
 };
 
 interface IAccordionProps {
   accordionData: IFAQ[];
   openId: string | null;
-  handleToggel: (openId: string) => void;
+  handleToggle: (openId: string) => void;
 };
 
 const Accordion: FC<IAccordionProps> = ({
   accordionData,
   openId,
-  handleToggel,
+  handleToggle,
 }) => {
   return (
     <ul className="accordion">
-      {accordionData.map(({ id, question, answer }) => (
+      {accordionData.map(({ id, title, content }) => (
         <li key={id} className="accordion__item">
           <button
-            className={`accordion__question ${openId === id && "accordion__question_open"}`}
-            aria-label={`Open answer: ${question}`}
-            onClick={() => handleToggel(id)}
+            className={`accordion__title ${openId === id && "accordion__title_open"}`}
+            aria-label={`Open: ${title}`}
+            onClick={() => handleToggle(id)}
           >
-            {question}
+            {title}
           </button>
           <div
             className={`accordion__collapse ${openId === id && "accordion__collapse_open"}`}
           >
-            <p className="accordion__answer">{answer}</p>
+            <p className="accordion__content">{content}</p>
           </div>
         </li>
       ))}

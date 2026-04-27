@@ -2,6 +2,7 @@ import { useState, type FC, type ReactNode } from "react";
 import "./Tabs.scss";
 
 export interface ITab {
+  id: number;
   label: string;
   value: string;
   content: ReactNode;
@@ -19,7 +20,7 @@ const Tabs: FC<ITabsProps> = ({ tabs }) => {
       <ul className="tab__list" role="tablist">
         {tabs.map((item) => (
           <li
-            key={item.value}
+            key={item.id}
             className={`tab__listItem ${tab.value === item.value && "tab__listItem_active"}`}
           >
             <button
