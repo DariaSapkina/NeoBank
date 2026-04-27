@@ -1,6 +1,5 @@
 import { Tabs, type ITab } from "@/components";
 import { TabAbout, TabCashback, TabRates, TabFAQ } from "./components";
-import "./TabsSection.scss";
 
 const TABS: ITab[] = [
   {

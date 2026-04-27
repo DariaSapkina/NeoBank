@@ -1,7 +1,7 @@
+import type { FC } from "react";
 import cardImageLoanPage from "@/assets/cardImageLoanPage.png";
 import { Tooltip, Button } from "@/components";
 import "./CardOverviewSection.scss";
-import type { FC } from "react";
 
 const FEATURE_LIST = [
   {

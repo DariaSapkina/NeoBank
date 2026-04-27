@@ -6,7 +6,7 @@ import { sendFirstStepForm, type IRequestFirstStep } from "@/api";
 
 const useFormFirstStep = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [offers, setOffers] = useState<IRequestFirstStep[] | undefined>([]);
+  const [offers, setOffers] = useState<IRequestFirstStep[] | null>(null);
 
   const formik = useFormik({
     initialValues: {

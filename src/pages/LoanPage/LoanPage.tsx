@@ -22,9 +22,9 @@ const LoanPage = () => {
       <CardOverviewSection onApplyClick={scrollToForm}/>
       <TabsSection />
       <StepsSection />
-      <div ref={formRef}>
+      <section ref={formRef}>
         <FormSection />
-      </div>
+      </section>
     </div>
   );
 };
