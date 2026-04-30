@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useFormik } from "formik";
+import { useDispatch } from "react-redux";
 import { validateFormFirstStep, prepareDataFormFirstStep } from "@/utils";
 import type { IFormInput } from "@/components";
-import { sendFirstStepForm, type IRequestFirstStep } from "@/api";
+import { sendFirstStepForm } from "@/api";
+import { setOffers, setStep } from "@/store";
 
-const useFormFirstStep = () => {
+export const useFormFirstStep = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [offers, setOffers] = useState<IRequestFirstStep[] | null>(null);
+  const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: {
@@ -28,13 +30,13 @@ const useFormFirstStep = () => {
       const res = await sendFirstStepForm(preparedValues);
 
       if (res) {
-        setOffers(res);
+        dispatch(setOffers(res));
+        dispatch(setStep(2));
       }
-      
+
       setIsLoading(false);
     },
   });
-  return { ...formik, isLoading, offers };
-};
 
-export { useFormFirstStep };
+  return { ...formik, isLoading };
+};

@@ -3,12 +3,14 @@ import {
   CardOverviewSection,
   StepsSection,
   TabsSection,
-  FormSection,
+  LoanApplicationFlow,
 } from "./components";
 import "./LoanPage.scss";
+import { useNavigate } from "react-router-dom";
 
 const LoanPage = () => {
   const formRef = useRef<HTMLDivElement | null>(null);
+  const navigate = useNavigate();
 
   const scrollToForm = () => {
     formRef.current?.scrollIntoView({
@@ -17,13 +19,21 @@ const LoanPage = () => {
     });
   };
 
+  const navigateToStep = (applicationId: number | null) => {
+    if (!applicationId) return null;
+    navigate(`/loan/${applicationId}`);
+  };
+
   return (
     <div className="loanPage">
-      <CardOverviewSection onApplyClick={scrollToForm}/>
+      <CardOverviewSection
+        onScrollToForm={scrollToForm}
+        onNavigate={navigateToStep}
+      />
       <TabsSection />
       <StepsSection />
       <section ref={formRef}>
-        <FormSection />
+        <LoanApplicationFlow />
       </section>
     </div>
   );

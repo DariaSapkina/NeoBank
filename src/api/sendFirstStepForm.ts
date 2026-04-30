@@ -11,7 +11,7 @@ export interface IRequestFirstStep {
   requestedAmount: number;
   term: number;
   totalAmount: number;
-};
+}
 
 export const sendFirstStepForm = async (value: IFormInput) => {
   try {

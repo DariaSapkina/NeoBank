@@ -35,3 +35,5 @@ export { Amount } from "./Amount";
 export { FormFields } from "./FormFields";
 
 export { Select } from "./Select";
+
+export { OfferCard } from "./OfferCard";
