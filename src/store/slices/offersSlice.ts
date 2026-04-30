@@ -1,0 +1,32 @@
+import { createSlice } from "@reduxjs/toolkit";
+import type { IRequestFirstStep } from "@/api";
+
+interface IOffersSlice {
+  applicationId: number | null;
+  offers: IRequestFirstStep[];
+  selectedOffer: IRequestFirstStep | null;
+}
+
+const initialState: IOffersSlice = {
+  applicationId: null,
+  offers: [],
+  selectedOffer: null,
+};
+
+const offersSlice = createSlice({
+  name: "offers",
+  initialState,
+  reducers: {
+    setOffers(state, action) {
+      state.offers = action.payload;
+      if (!state.offers.length) return;
+      state.applicationId = state.offers[0].applicationId;
+    },
+    setSelectedOffer(state, action) {
+      state.selectedOffer = action.payload;
+    },
+  },
+});
+
+export const { setOffers, setSelectedOffer } = offersSlice.actions;
+export default offersSlice.reducer;

@@ -4,3 +4,5 @@ export { useSlider } from "./useSlider";
 export { useNews } from "./useNews";
 export { useSubscribeNewsLetter } from "./useSubscribeNewsLetter";
 export { useFormFirstStep } from "./useFormFirstStep";
+export { useRestoreStep } from "./useRestoreStep";
+export { useSelectOffer } from "./useSelectOffer";

@@ -1,7 +1,10 @@
 import type { FC } from "react";
+import { useSelector } from "react-redux";
 import cardImageLoanPage from "@/assets/cardImageLoanPage.png";
 import { Tooltip, Button } from "@/components";
+import type { TRootState } from "@/store";
 import "./CardOverviewSection.scss";
+import { getButtonConfig } from "@/utils";
 
 const FEATURE_LIST = [
   {
@@ -25,10 +28,24 @@ const FEATURE_LIST = [
 ];
 
 interface ICardOverviewProps {
-  onApplyClick: () => void;
-};
+  onScrollToForm: () => void;
+  onNavigate: (applicationId: number | null) => void;
+}
 
-const CardOverviewSection: FC<ICardOverviewProps> = ({ onApplyClick }) => {
+const CardOverviewSection: FC<ICardOverviewProps> = ({
+  onScrollToForm,
+  onNavigate,
+}) => {
+  const { currentStep } = useSelector((state: TRootState) => state.application);
+  const { applicationId } = useSelector((s: TRootState) => s.offers);
+
+  const button = getButtonConfig(
+    applicationId,
+    currentStep,
+    onScrollToForm,
+    onNavigate,
+  );
+
   return (
     <section className="cardOverviewSection">
       <div className="cardOverviewSection__content">
@@ -50,7 +67,12 @@ const CardOverviewSection: FC<ICardOverviewProps> = ({ onApplyClick }) => {
           ))}
         </ul>
         <div className="cardOverviewSection__buttonWrapper">
-          <Button title="Apply for card" radius="small" size="large" onClick={onApplyClick}/>
+          <Button
+            title={button.title}
+            radius="small"
+            size="large"
+            onClick={() => button.onClick(applicationId)}
+          />
         </div>
       </div>
       <div className="cardOverviewSection__img">
