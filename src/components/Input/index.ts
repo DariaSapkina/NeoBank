@@ -1,2 +1,8 @@
 export { Input } from "./Input";
-export type { TInputOption, IFormInput, IInputBase, IInputProps } from "./Input.props";
+export type {
+  TInputOption,
+  IFormInput,
+  IInputBase,
+  IInputProps,
+  IFormInputSecondStep,
+} from "./Input.props";

@@ -6,3 +6,4 @@ export { useSubscribeNewsLetter } from "./useSubscribeNewsLetter";
 export { useFormFirstStep } from "./useFormFirstStep";
 export { useRestoreStep } from "./useRestoreStep";
 export { useSelectOffer } from "./useSelectOffer";
+export { useFormSecondStep } from "./useFormSecondStep";

@@ -1,13 +1,22 @@
-import type { FC } from "react";
+//import type { FC } from "react";
 import { useFormikContext } from "formik";
-import type { IInputProps, IFormInput } from "@/components";
+import type { IInputProps /*IFormInput*/ } from "@/components";
 import "./Select.scss";
 
-const Select: FC<IInputProps> = ({ id, label, options, name, required }) => {
-  const { setFieldValue, values } = useFormikContext<IFormInput>();
+const Select = <T,>({
+  id,
+  label,
+  options,
+  name,
+  required,
+  size,
+}: IInputProps) => {
+  const { setFieldValue, values, errors } = useFormikContext<T>();
+
+  const fieldName = name as keyof T;
 
   return (
-    <div className="select">
+    <div className={`select ${size && "select_large"}`}>
       <label
         htmlFor={id}
         className={`select__label ${required && "select__label_required"}`}
@@ -18,8 +27,8 @@ const Select: FC<IInputProps> = ({ id, label, options, name, required }) => {
         className="select__field"
         id={id}
         name={name}
-        value={values[name as keyof IFormInput]}
-        onChange={(e) => setFieldValue(name, Number(e.target.value))}
+        value={String(values[fieldName] ?? "")}
+        onChange={(e) => setFieldValue(name, e.target.value)}
       >
         {options?.map((item, index) => (
           <option key={index} value={item.value}>
@@ -27,6 +36,9 @@ const Select: FC<IInputProps> = ({ id, label, options, name, required }) => {
           </option>
         ))}
       </select>
+      {errors[fieldName] && (
+        <p className="input__error">{errors[fieldName] as string}</p>
+      )}
     </div>
   );
 };

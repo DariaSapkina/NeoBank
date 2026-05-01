@@ -1,4 +1,8 @@
-import type { IFormInput, IInputBase } from "@/components";
+import type {
+  IFormInput,
+  IFormInputSecondStep,
+  IInputBase,
+} from "@/components";
 
 type TInputTag = "input" | "select";
 
@@ -6,7 +10,13 @@ export interface IInputs extends IInputBase {
   type?: "text" | "email" | "date";
   tag: TInputTag;
   name: keyof IFormInput;
-};
+}
+
+export interface ISecondStepInputs extends IInputBase {
+  type?: "text" | "email" | "date";
+  tag: TInputTag;
+  name: keyof IFormInputSecondStep;
+}
 
 export const INPUTS_INFO: IInputs[] = [
   {
@@ -96,5 +106,214 @@ export const INPUTS_INFO: IInputs[] = [
     label: "Your passport number",
     tag: "input",
     required: true,
+  },
+];
+
+export const BASIC_INPUTS_SECOND_STEP_INFO: ISecondStepInputs[] = [
+  {
+    id: "loan-gender",
+    name: "gender",
+    label: "What's your gender",
+    tag: "select",
+    required: true,
+    options: [
+      {
+        value: "",
+        title: "",
+      },
+      {
+        value: "MALE",
+        title: "MALE",
+      },
+      {
+        value: "FEMALE",
+        title: "FEMALE",
+      },
+    ],
+  },
+  {
+    id: "loan-maritalStatus",
+    name: "maritalStatus",
+    label: "Your marital status",
+    tag: "select",
+    required: true,
+    options: [
+      {
+        value: "",
+        title: "",
+      },
+      {
+        value: "MARRIED",
+        title: "MARRIED",
+      },
+      {
+        value: "DIVORCED",
+        title: "DIVORCED",
+      },
+      {
+        value: "SINGLE",
+        title: "SINGLE",
+      },
+      {
+        value: "WIDOW_WIDOWER",
+        title: "WIDOW WIDOWER",
+      },
+    ],
+  },
+  {
+    id: "loan-dependentAmount",
+    name: "dependentAmount",
+    label: "Your number of dependents",
+    tag: "select",
+    required: true,
+    options: [
+      {
+        value: "",
+        title: "",
+      },
+      {
+        value: 0,
+        title: "0",
+      },
+      {
+        value: 1,
+        title: "1",
+      },
+      {
+        value: 2,
+        title: "2",
+      },
+      {
+        value: 3,
+        title: "3",
+      },
+      {
+        value: 4,
+        title: "4",
+      },
+      {
+        value: 5,
+        title: "5",
+      },
+      {
+        value: 6,
+        title: "6",
+      },
+    ],
+  },
+  {
+    id: "loan-passportIssueDate",
+    type: "text",
+    name: "passportIssueDate",
+    placeholder: "Select Date and Time",
+    label: "Date of issue of the passport",
+    required: true,
+    tag: "input",
+  },
+  {
+    id: "loan-passportIssueBranch",
+    type: "text",
+    name: "passportIssueBranch",
+    placeholder: "000-000",
+    label: "Division code",
+    required: true,
+    tag: "input",
+  },
+];
+
+export const EMPLOYMENT_INPUTS_SECOND_STEP_INFO: ISecondStepInputs[] = [
+  {
+    id: "loan-employmentStatus",
+    name: "employmentStatus",
+    label: "Your employment status",
+    tag: "select",
+    required: true,
+    options: [
+      {
+        value: "",
+        title: "",
+      },
+      {
+        value: "UNEMPLOYED",
+        title: "UNEMPLOYED",
+      },
+      {
+        value: "SELF_EMPLOYED",
+        title: "SELF EMPLOYED",
+      },
+      {
+        value: "EMPLOYED",
+        title: "EMPLOYED",
+      },
+      {
+        value: "BUSINESS_OWNER",
+        title: "BUSINESS OWNER",
+      },
+    ],
+  },
+  {
+    id: "loan-employerINN",
+    type: "text",
+    name: "employerINN",
+    placeholder: "000000000000",
+    label: "Your employer INN",
+    required: true,
+    tag: "input",
+  },
+  {
+    id: "loan-salary",
+    type: "text",
+    name: "salary",
+    placeholder: "For example 100 000",
+    label: "Your salary",
+    required: true,
+    tag: "input",
+  },
+  {
+    id: "loan-position",
+    name: "position",
+    label: "Your position",
+    tag: "select",
+    required: true,
+    options: [
+      {
+        value: "",
+        title: "",
+      },
+      {
+        value: "WORKER",
+        title: "WORKER",
+      },
+      {
+        value: "MID_MANAGER",
+        title: "MIDDLE MANAGER",
+      },
+      {
+        value: "TOP_MANAGER",
+        title: "TOP MANAGER",
+      },
+      {
+        value: "OWNER",
+        title: "OWNER",
+      },
+    ],
+  },
+  {
+    id: "loan-workExperienceTotal",
+    type: "text",
+    name: "workExperienceTotal",
+    placeholder: "For example 10",
+    label: "Your work experience total",
+    required: true,
+    tag: "input",
+  },
+  {
+    id: "loan-workExperienceCurrent",
+    type: "text",
+    name: "workExperienceCurrent",
+    placeholder: "For example 2",
+    label: "Your work experience current",
+    required: true,
+    tag: "input",
   },
 ];

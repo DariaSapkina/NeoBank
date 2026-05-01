@@ -14,4 +14,10 @@ export {
   SUBSCRIBE_NEWS_LETTER_KEY,
   SUBSCRIBE_NEWS_LETTER_VALUE,
 } from "./localStorage.constants";
-export { INPUTS_INFO, type IInputs } from "./loanForm.constants";
+export {
+  INPUTS_INFO,
+  type IInputs,
+  BASIC_INPUTS_SECOND_STEP_INFO,
+  EMPLOYMENT_INPUTS_SECOND_STEP_INFO,
+  type ISecondStepInputs,
+} from "./loanForm.constants";
