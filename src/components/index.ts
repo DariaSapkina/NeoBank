@@ -28,6 +28,7 @@ export {
   type IFormInput,
   type IInputBase,
   type IInputProps,
+  type IFormInputSecondStep,
 } from "./Input";
 
 export { Amount } from "./Amount";

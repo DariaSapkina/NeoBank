@@ -8,6 +8,7 @@ import {
   PreliminaryDecisionNotice,
   OffersSection,
 } from "../index";
+import "./LoanApplicationFlow.scss";
 
 const LoanApplicationFlow = () => {
   useRestoreStep();
@@ -18,7 +19,7 @@ const LoanApplicationFlow = () => {
 
   if (formik.isLoading || isSelectLoading) {
     return (
-      <div className="formSection__spinner">
+      <div className="spinnerWrapper">
         <Spinner />
       </div>
     );

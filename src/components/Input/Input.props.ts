@@ -8,11 +8,30 @@ export interface IFormInput {
   birthdate: string;
   passportSeries: string;
   passportNumber: string;
-};
+}
+
+export interface IFormInputSecondStep {
+  gender: "MALE" | "FAMALE" | "";
+  maritalStatus: "MARRIED" | "DIVORCED" | "SINGLE" | "WIDOW_WIDOWER" | "";
+  dependentAmount: number | string;
+  passportIssueDate: string;
+  passportIssueBranch: string;
+  employmentStatus:
+    | "UNEMPLOYED"
+    | "SELF_EMPLOYED"
+    | "EMPLOYED"
+    | "BUSINESS_OWNER"
+    | "";
+  employerINN: number | string;
+  salary: number | string;
+  position: "WORKER" | "MID_MANAGER" | "TOP_MANAGER" | "OWNER" | "";
+  workExperienceTotal: number | string;
+  workExperienceCurrent: number | string;
+}
 
 export type TInputOption = {
   title: string;
-  value: number;
+  value: number | string;
 };
 
 export interface IInputBase {
@@ -21,9 +40,10 @@ export interface IInputBase {
   label: string;
   required?: boolean;
   options?: TInputOption[];
-};
+}
 
 export interface IInputProps extends IInputBase {
   type?: string;
   name: string;
-};
+  size?: string;
+}

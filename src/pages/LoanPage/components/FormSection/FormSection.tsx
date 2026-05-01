@@ -42,7 +42,10 @@ const FormSection = () => {
           />
         </div>
       </div>
-      <FormFields inputs={INPUTS_INFO} legend="Contact Information" />
+      <FormFields<IFormInput>
+        inputs={INPUTS_INFO}
+        legend="Contact Information"
+      />
       <div className="formSection__buttonWrapper">
         <Button type="submit" title="Continue" size="large" radius="small" />
       </div>

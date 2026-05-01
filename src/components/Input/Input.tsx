@@ -1,25 +1,27 @@
-import type { FC } from "react";
+//import type { FC } from "react";
 import { useFormikContext } from "formik";
-import type { IInputProps, IFormInput } from "./Input.props";
+import type { IInputProps /*IFormInput*/ } from "./Input.props";
 import "./Input.scss";
 
-const Input: FC<IInputProps> = ({
+const Input = <T,>({
   id,
   type,
   placeholder,
   label,
   name,
   required,
-}) => {
-  const { submitCount, setFieldValue, errors, values } =
-    useFormikContext<IFormInput>();
+  size,
+}: IInputProps) => {
+  const { submitCount, setFieldValue, errors, values } = useFormikContext<T>();
+
+  const fieldName = name as keyof T;
 
   const isSubmitted = (submitCount ?? 0) > 0;
-  const isError = Boolean(errors[name as keyof IFormInput]);
-  const isSuccess = isSubmitted && !errors[name as keyof IFormInput];
+  const isError = Boolean(errors[fieldName]);
+  const isSuccess = isSubmitted && !errors[fieldName];
 
   return (
-    <div className="input">
+    <div className={`input ${size && "input_large"}`}>
       <label
         htmlFor={id}
         className={`input__label ${required && "input__label_required"}`}
@@ -38,13 +40,13 @@ const Input: FC<IInputProps> = ({
           name={name}
           type={type}
           placeholder={placeholder}
-          value={values[name as keyof IFormInput]}
+          value={String(values[fieldName] ?? "")}
           onChange={(e) => setFieldValue(name, e.target.value)}
         />
       </div>
 
-      {errors[name as keyof IFormInput] && (
-        <p className="input__error">{errors[name as keyof IFormInput]}</p>
+      {errors[fieldName] && (
+        <p className="input__error">{errors[fieldName] as string}</p>
       )}
     </div>
   );
