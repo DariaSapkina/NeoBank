@@ -7,6 +7,7 @@ interface IModalWindowProps {
   setActive: (value: boolean) => void;
   children: ReactNode;
   title: string;
+  paragraph: string;
 }
 
 const ModalWindow: FC<IModalWindowProps> = ({
@@ -14,6 +15,7 @@ const ModalWindow: FC<IModalWindowProps> = ({
   setActive,
   children,
   title,
+  paragraph,
 }) => {
   return (
     <div
@@ -33,6 +35,7 @@ const ModalWindow: FC<IModalWindowProps> = ({
             <img src={Close_square} alt="" />
           </button>
         </div>
+        <p className="modalWindow__paragraph">{paragraph}</p>
         {children}
       </div>
     </div>

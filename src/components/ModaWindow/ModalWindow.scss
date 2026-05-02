@@ -46,4 +46,13 @@
       cursor: pointer;
     }
   }
+
+  &__paragraph {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2%;
+    line-height: 147%;
+    color: #1a202c;
+    margin-bottom: 35px;
+  }
 }

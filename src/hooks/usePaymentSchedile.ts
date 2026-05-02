@@ -16,7 +16,7 @@ export const usePaymantSchedule = () => {
   const { applicationId } = useSelector((state: TRootState) => state.offers);
   const [loading, setLoading] = useState(true);
   const [schedule, setSchedule] = useState<IScheduleItem[] | null>(null);
-  const [submittingSchedule, setSubmittingSchedule] = useState(true);
+  const [submittingSchedule, setSubmittingSchedule] = useState(false);
 
   useEffect(() => {
     const getSchedule = async () => {
