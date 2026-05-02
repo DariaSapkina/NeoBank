@@ -7,8 +7,9 @@ export { getNews, type INews, type INewsResponse } from "./getNews.api";
 export { subscribeNews } from "./subscribeNews.api";
 export { sendFirstStepForm, type IRequestFirstStep } from "./sendFirstStepForm";
 export { selectOffer } from "./selectOffer.api";
-export { getApplicationStatus } from "./getApplicationStatus";
+export { getApplicationInfo } from "./getApplicationStatus";
 export {
   registerApplication,
   type IRequestSecondStep,
 } from "./registerApplication.api";
+export { createDocument } from "./createDocument.api";

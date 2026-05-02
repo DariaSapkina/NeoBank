@@ -1,0 +1,62 @@
+.thirdStepTable {
+  background-color: white;
+  box-shadow:
+    0px 2px 4px 0px rgba(0, 0, 0, 0.2),
+    0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 28px;
+  padding: 32px;
+
+  &__header {
+    margin-bottom: 41px;
+    display: flex;
+    align-items: center;
+    gap: 120px;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 100%;
+  }
+
+  &__step {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 100%;
+  }
+
+  &__buttonsWrapper {
+    display: flex;
+    align-items: center;
+    padding-top: 54px;
+  }
+
+  &__checkWrapper {
+    margin-left: auto;
+    margin-right: 40px;
+  }
+
+  &__buttonWrapper {
+    width: 96px;
+  }
+
+  &__denyParagraph {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2%;
+    line-height: 147%;
+    color: #1a202c;
+    margin-bottom: 35px;
+  }
+
+  &__denyButtonsWrapper {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+  }
+
+  &__buttonWrapperDenied {
+    margin-left: auto;
+    width: 128px;
+  }
+}

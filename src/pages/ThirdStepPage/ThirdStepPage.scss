@@ -1,19 +1,19 @@
 @use "@/styles" as *;
 
-.secondStepPage {
+.thirdStepPage {
   @include container;
-  padding-top: 32px;
+  padding-top: 24px;
   padding-bottom: 96px;
 }
 
 @media (max-width: 1339px) {
-  .secondStepPage {
+  .thirdStepPage {
     padding: 24px 20px 96px 20px;
   }
 }
 
 @media (max-width: 875px) {
-  .secondStepPage {
+  .thirdStepPage {
     padding-top: 24px;
     padding-bottom: 50px;
   }

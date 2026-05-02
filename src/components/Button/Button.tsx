@@ -11,6 +11,8 @@ const Button: FC<IButtonProps> = ({
   onClick,
   icon,
   type,
+  isReject,
+  isDisable,
 }) => {
   const buttonClass = clsx(
     "button",
@@ -25,6 +27,8 @@ const Button: FC<IButtonProps> = ({
         ? "button_size_medium"
         : "button_size_large",
     icon && "button_hasIcon",
+    isReject && "button_reject",
+    isDisable && "button_disable",
   );
 
   return (

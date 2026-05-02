@@ -6,4 +6,6 @@ export type IButtonProps = {
   onClick?: () => void;
   icon?: string;
   type?: "submit" | "reset";
+  isReject?: boolean;
+  isDisable?: boolean;
 };
