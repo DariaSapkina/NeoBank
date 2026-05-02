@@ -38,3 +38,14 @@ export { FormFields } from "./FormFields";
 export { Select } from "./Select";
 
 export { OfferCard } from "./OfferCard";
+
+export {
+  Table,
+  type IColumnHeader,
+  type IRowTable,
+  type ITableProps,
+} from "./Table";
+
+export { Checkbox } from "./Checkbox";
+
+export { ModalWindow } from "./ModaWindow";

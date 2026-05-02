@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getApplicationStatus } from "@/api";
+import { getApplicationInfo } from "@/api";
 import { setStep, type TRootState } from "@/store";
 import { mapStatusToStep } from "@/utils";
 
@@ -12,7 +12,7 @@ export const useRestoreStep = () => {
     if (!applicationId) return;
 
     const getStatus = async () => {
-      const res = await getApplicationStatus(applicationId);
+      const res = await getApplicationInfo(applicationId);
 
       if (res) {
         const step = mapStatusToStep(res.status);

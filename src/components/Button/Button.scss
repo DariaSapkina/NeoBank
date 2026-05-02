@@ -55,6 +55,23 @@
     cursor: pointer;
     background-color: #7796c0;
   }
+
+  &_reject {
+    background-color: #d93737c9;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #b42c2cc9;
+    }
+  }
+
+  &_disable {
+    background-color: #7796c0;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
 }
 
 @media (max-width: 596px) {
