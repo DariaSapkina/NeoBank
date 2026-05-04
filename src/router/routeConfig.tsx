@@ -4,8 +4,8 @@ import {
   SignDocumentPage,
   HomePage,
   LoanPage,
-  SecondStepPage,
-  ThirdStepPage,
+  PersonalAndEmploymentPage,
+  PaymentSchedulePage,
 } from "@/pages";
 
 export enum AppRoutes {
@@ -37,11 +37,11 @@ export const routerConfig: Record<AppRoutes, RouteProps> = {
   },
   [AppRoutes.SECOND_STEP]: {
     path: RoutePath.secondStep,
-    element: <SecondStepPage />,
+    element: <PersonalAndEmploymentPage />,
   },
   [AppRoutes.THIRD_STEP]: {
     path: RoutePath.thirdStep,
-    element: <ThirdStepPage />,
+    element: <PaymentSchedulePage />,
   },
   [AppRoutes.FOURTH_STEP]: {
     path: RoutePath.fourthStep,

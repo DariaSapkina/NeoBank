@@ -1,19 +1,19 @@
 @use "@/styles" as *;
 
-.thirdStepPage {
+.personalAndEmploymentPage {
   @include container;
-  padding-top: 24px;
+  padding-top: 32px;
   padding-bottom: 96px;
 }
 
 @media (max-width: 1339px) {
-  .thirdStepPage {
+  .personalAndEmploymentPage {
     padding: 24px 20px 96px 20px;
   }
 }
 
 @media (max-width: 875px) {
-  .thirdStepPage {
+  .personalAndEmploymentPage {
     padding-top: 24px;
     padding-bottom: 50px;
   }

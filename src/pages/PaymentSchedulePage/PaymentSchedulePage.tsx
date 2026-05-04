@@ -1,7 +1,7 @@
 import { Spinner, type IColumnHeader } from "@/components";
 import { usePaymantSchedule } from "@/hooks";
 import { FormedDocumentNotice, ThirdStepTable } from "./components";
-import "./ThirdStepPage.scss";
+import "./PaymentSchedulePage.scss";
 
 const TABLR_HEADER: IColumnHeader[] = [
   { id: 1, title: "NUMBER", key: "number" },
@@ -12,7 +12,7 @@ const TABLR_HEADER: IColumnHeader[] = [
   { id: 6, title: "REMAINING DEBT", key: "remainingDebt" },
 ];
 
-const ThirdStepPage = () => {
+const PaymentSchedulePage = () => {
   const { loading, schedule, submittingSchedule, submitSchedule } =
     usePaymantSchedule();
 
@@ -29,7 +29,7 @@ const ThirdStepPage = () => {
   }
 
   return (
-    <div className="thirdStepPage">
+    <div className="paymentSchedulePage">
       {schedule && (
         <ThirdStepTable
           columns={TABLR_HEADER}
@@ -41,4 +41,4 @@ const ThirdStepPage = () => {
   );
 };
 
-export { ThirdStepPage };
+export { PaymentSchedulePage };

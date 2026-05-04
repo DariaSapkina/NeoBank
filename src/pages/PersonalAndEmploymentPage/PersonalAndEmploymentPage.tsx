@@ -5,9 +5,9 @@ import { useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router-dom";
 import { ApplicationProcessing, SecondStepForm } from "./components";
 import { FormikProvider } from "formik";
-import "./SecondStepPage.scss";
+import "./PersonalAndEmploymenPage.scss";
 
-const SecondStepPage = () => {
+const PersonalAndEmploymentPage = () => {
   const { applicationId: userAppId } = useSelector(
     (state: TRootState) => state.offers,
   );
@@ -31,7 +31,7 @@ const SecondStepPage = () => {
   }
 
   return (
-    <div className="secondStepPage">
+    <div className="personalAndEmploymentPage">
       <FormikProvider value={formik}>
         <SecondStepForm />
       </FormikProvider>
@@ -39,4 +39,4 @@ const SecondStepPage = () => {
   );
 };
 
-export { SecondStepPage };
+export { PersonalAndEmploymentPage };
