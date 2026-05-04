@@ -1,4 +1,3 @@
-//import type { FC } from "react";
 import { Input, Select } from "@/components";
 import type { IInputs, ISecondStepInputs } from "@/constants";
 import "./FormFields.scss";

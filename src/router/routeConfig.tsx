@@ -1,5 +1,12 @@
 import type { RouteProps } from "react-router-dom";
-import { HomePage, LoanPage, SecondStepPage, ThirdStepPage } from "@/pages";
+import {
+  CodePage,
+  SignDocumentPage,
+  HomePage,
+  LoanPage,
+  SecondStepPage,
+  ThirdStepPage,
+} from "@/pages";
 
 export enum AppRoutes {
   HOME = "home",
@@ -7,6 +14,7 @@ export enum AppRoutes {
   SECOND_STEP = "secondStep",
   THIRD_STEP = "thirdStep",
   FOURTH_STEP = "fourthStep",
+  CODE_STEP = "codeStep",
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -15,6 +23,7 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.SECOND_STEP]: "/loan/:applicationId",
   [AppRoutes.THIRD_STEP]: "/loan/:applicationId/document",
   [AppRoutes.FOURTH_STEP]: "/loan/:applicationId/document/sign",
+  [AppRoutes.CODE_STEP]: "/loan/:applicationId/code",
 };
 
 export const routerConfig: Record<AppRoutes, RouteProps> = {
@@ -36,6 +45,10 @@ export const routerConfig: Record<AppRoutes, RouteProps> = {
   },
   [AppRoutes.FOURTH_STEP]: {
     path: RoutePath.fourthStep,
-    element: <ThirdStepPage />,
+    element: <SignDocumentPage />,
+  },
+  [AppRoutes.CODE_STEP]: {
+    path: RoutePath.codeStep,
+    element: <CodePage />,
   },
 };

@@ -1,0 +1,20 @@
+.codePage {
+  padding: 104px 0 96px 0;
+
+  &__title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2%;
+    line-height: 112%;
+    margin-bottom: 32px;
+  }
+
+  &__error {
+    text-align: center;
+    padding-top: 16px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ff5631;
+  }
+}
