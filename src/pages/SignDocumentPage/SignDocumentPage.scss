@@ -1,0 +1,89 @@
+@use "@/styles" as *;
+
+.signDocumentPage {
+  @include container;
+  padding-top: 104px;
+  padding-bottom: 96px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 112%;
+    color: #1c1c1e;
+  }
+
+  &__step {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 112%;
+    color: black;
+  }
+
+  &__description {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 112%;
+    color: #4f5665;
+    margin-bottom: 32px;
+  }
+
+  &__file {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  &__buttonsWrapper {
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    justify-content: end;
+  }
+
+  &__buttonWrapper {
+    width: 160px;
+  }
+}
+
+@media (max-width: 1339px) {
+  .signDocumentPage {
+    padding: 24px 20px 96px 20px;
+  }
+}
+
+@media (max-width: 875px) {
+  .signDocumentPage {
+    padding-top: 24px;
+    padding-bottom: 50px;
+  }
+}
+
+@media (max-width: 595px) {
+  .signDocumentPage {
+    &__header {
+      flex-direction: column;
+      align-items: start;
+      gap: 10px;
+    }
+  }
+}
+
+@media (max-width: 375px) {
+  .signDocumentPage {
+    &__file {
+      margin-bottom: 20px;
+    }
+    &__buttonsWrapper {
+      flex-direction: column-reverse;
+      align-items: start;
+      gap: 10px;
+    }
+  }
+}

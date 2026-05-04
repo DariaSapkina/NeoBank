@@ -49,3 +49,5 @@ export {
 export { Checkbox } from "./Checkbox";
 
 export { ModalWindow } from "./ModaWindow";
+
+export { PinInput, type IPinInputProps } from "./PinInput";

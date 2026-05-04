@@ -1,0 +1,26 @@
+.signedDocumentNotice {
+  padding: 166px 0;
+
+  &__title {
+    margin: 0 auto;
+    max-width: 554px;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 2%;
+    line-height: 112%;
+    color: #1c1c1e;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  &__description {
+    margin: 0 auto;
+    max-width: 404px;
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2%;
+    line-height: 112%;
+    color: #4f5665;
+    text-align: center;
+  }
+}

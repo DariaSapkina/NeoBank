@@ -8,3 +8,6 @@ export { useRestoreStep } from "./useRestoreStep";
 export { useSelectOffer } from "./useSelectOffer";
 export { useFormSecondStep } from "./useFormSecondStep";
 export { usePaymantSchedule } from "./usePaymentSchedile";
+export { useSignDocument } from "./useSignDocument";
+export { useCode } from "./useCode";
+export { usePIN } from "./usePIN";
