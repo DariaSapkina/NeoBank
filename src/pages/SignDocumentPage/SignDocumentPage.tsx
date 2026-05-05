@@ -4,10 +4,23 @@ import { useState } from "react";
 import File_dock_duotone from "@/assets/File_dock_duotone.svg";
 import { useSignDocument } from "@/hooks";
 import { SignedDocumentNotice } from "./components";
+import { Navigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import type { TRootState } from "@/store";
+import Credit_card_offer from "@/assets/Credit_card_offer.pdf";
 
 const SignDocumentPage = () => {
   const [isChecked, setIsChecked] = useState(false);
-  const { handleSign, loading, isSigned } = useSignDocument();
+  const { handleSign, loading } = useSignDocument();
+
+  const { applicationId: userAppId } = useSelector(
+    (state: TRootState) => state.offers,
+  );
+  const { completed } = useSelector((state: TRootState) => state.application);
+  const { applicationId } = useParams();
+  if (!userAppId || String(userAppId) !== applicationId) {
+    return <Navigate to="/loan" replace />;
+  }
 
   if (loading) {
     return (
@@ -17,7 +30,7 @@ const SignDocumentPage = () => {
     );
   }
 
-  if (isSigned) {
+  if (completed[4]) {
     return <SignedDocumentNotice />;
   }
 
@@ -39,12 +52,16 @@ const SignDocumentPage = () => {
           policy regarding the processing of personal data, a form of consent to
           the processing of personal data.
         </p>
-        <div className="signDocumentPage__file">
+        <a
+          href={Credit_card_offer}
+          download="Information_on_your_card"
+          className="signDocumentPage__file"
+        >
           <img src={File_dock_duotone} alt="" />
           <span className="signDocumentPage__fileDesc">
             Information on your card
           </span>
-        </div>
+        </a>
         <div className="signDocumentPage__buttonsWrapper">
           <Checkbox
             checked={isChecked}

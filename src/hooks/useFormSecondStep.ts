@@ -1,15 +1,15 @@
 import { registerApplication } from "@/api";
-import type { TRootState } from "@/store";
+import { completeStep, setStep, type TRootState } from "@/store";
 import { validateFormSecondStep } from "@/utils";
 import { prepareDataFormSecondStep } from "@/utils";
 import { useFormik } from "formik";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const useFormSecondStep = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { applicationId } = useSelector((state: TRootState) => state.offers);
-  const [isSuccesRegistration, setIsSuccesRegistration] = useState(false);
+  const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: {
@@ -39,12 +39,13 @@ export const useFormSecondStep = () => {
       const res = await registerApplication(applicationId, preparedData);
 
       if (res) {
-        setIsSuccesRegistration(true);
+        dispatch(completeStep(2));
+        dispatch(setStep(3));
       }
 
       setIsLoading(false);
     },
   });
 
-  return { ...formik, isLoading, isSuccesRegistration };
+  return { ...formik, isLoading };
 };

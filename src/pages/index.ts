@@ -4,3 +4,4 @@ export { PersonalAndEmploymentPage } from "./PersonalAndEmploymentPage/PersonalA
 export { PaymentSchedulePage } from "./PaymentSchedulePage/PaymentSchedulePage";
 export { SignDocumentPage } from "./SignDocumentPage/SignDocumentPage";
 export { CodePage } from "./CodePage/CodePage";
+export { NotFoundPage } from "./NotFoundPage/NotFoundPage";

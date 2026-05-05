@@ -1,25 +1,25 @@
 export const getButtonConfig = (
+  completedFirstStep: boolean,
   applicationId: number | null,
-  currentStep: number,
   onScrollToForm: () => void,
   onNavigate: (applicationId: number | null) => void,
 ) => {
+  if (completedFirstStep) {
+    return {
+      title: "Continue registration",
+      onClick: onNavigate,
+    };
+  }
+
   if (!applicationId) {
     return {
       title: "Apply for card",
       onClick: onScrollToForm,
     };
-  }
-
-  if (currentStep < 3) {
+  } else {
     return {
       title: "Choose an offer",
       onClick: onScrollToForm,
     };
   }
-
-  return {
-    title: "Continue registration",
-    onClick: onNavigate,
-  };
 };

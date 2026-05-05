@@ -1,25 +1,30 @@
 import { sendCode } from "@/api";
-import type { TRootState } from "@/store";
+import { completeStep, type TRootState } from "@/store";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 export const useCode = () => {
   const { applicationId } = useSelector((state: TRootState) => state.offers);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
-  const [isSuccesCode, setIsSuccesCode] = useState(false);
+  const dispatch = useDispatch();
 
   const handleCheckCode = async (code: string) => {
     setLoading(true);
+
+    if (!applicationId) return;
+
     const res = await sendCode(code, applicationId);
+
     if (!res) {
       setError("Invalid confirmation code");
       setLoading(false);
       return;
     }
-    setIsSuccesCode(true);
+
+    dispatch(completeStep(5));
     setLoading(false);
   };
 
-  return { error, loading, isSuccesCode, handleCheckCode };
+  return { error, loading, handleCheckCode };
 };

@@ -1,7 +1,7 @@
 import { createDocument, getApplicationInfo } from "@/api";
-import type { TRootState } from "@/store";
+import { completeStep, setStep, type TRootState } from "@/store";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 interface IScheduleItem {
   number: number;
@@ -16,7 +16,7 @@ export const usePaymantSchedule = () => {
   const { applicationId } = useSelector((state: TRootState) => state.offers);
   const [loading, setLoading] = useState(true);
   const [schedule, setSchedule] = useState<IScheduleItem[] | null>(null);
-  const [submittingSchedule, setSubmittingSchedule] = useState(false);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getSchedule = async () => {
@@ -35,12 +35,18 @@ export const usePaymantSchedule = () => {
 
   const submitSchedule = async () => {
     setLoading(true);
+
+    if (!applicationId) return;
+
     const res = await createDocument(applicationId);
+
     if (res) {
-      setSubmittingSchedule(true);
+      dispatch(completeStep(3));
+      dispatch(setStep(4));
     }
+
     setLoading(false);
   };
 
-  return { schedule, loading, submittingSchedule, submitSchedule };
+  return { schedule, loading, submitSchedule };
 };

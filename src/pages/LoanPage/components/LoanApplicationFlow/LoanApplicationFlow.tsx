@@ -14,7 +14,7 @@ const LoanApplicationFlow = () => {
   useRestoreStep();
   const formik = useFormFirstStep();
   const { offers } = useSelector((state: TRootState) => state.offers);
-  const { currentStep } = useSelector((state: TRootState) => state.application);
+  const { completed } = useSelector((state: TRootState) => state.application);
   const { handleSelectOffer, isSelectLoading } = useSelectOffer();
 
   if (formik.isLoading || isSelectLoading) {
@@ -25,21 +25,19 @@ const LoanApplicationFlow = () => {
     );
   }
 
-  if (currentStep === 1) {
-    return (
-      <FormikProvider value={formik}>
-        <FormSection />
-      </FormikProvider>
-    );
+  if (completed && completed[1]) {
+    return <PreliminaryDecisionNotice />;
   }
 
-  if (currentStep === 2) {
+  if (offers.length) {
     return <OffersSection offers={offers} handleSelect={handleSelectOffer} />;
   }
 
-  if (currentStep === 3) {
-    return <PreliminaryDecisionNotice />;
-  }
+  return (
+    <FormikProvider value={formik}>
+      <FormSection />
+    </FormikProvider>
+  );
 };
 
 export { LoanApplicationFlow };

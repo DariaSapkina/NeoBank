@@ -11,3 +11,4 @@ export { usePaymantSchedule } from "./usePaymentSchedile";
 export { useSignDocument } from "./useSignDocument";
 export { useCode } from "./useCode";
 export { usePIN } from "./usePIN";
+export { useTable } from "./useTable";

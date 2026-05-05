@@ -12,7 +12,6 @@ export const usePIN = (onComplete: (code: string) => void, length: number) => {
     newValues[index] = value;
     setValues(newValues);
     if (value && index < length - 1) {
-      console.log(value);
       inputsRef.current[index + 1]?.focus();
     }
     if (newValues.every((v) => v !== "")) {

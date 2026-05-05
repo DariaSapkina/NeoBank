@@ -1,7 +1,7 @@
 import { URL } from "@/constants";
 import axios from "axios";
 
-export const sendCode = async (code: string, applicationId: number | null) => {
+export const sendCode = async (code: string, applicationId: number) => {
   try {
     const res = await axios.post(
       `${URL}/document/${applicationId}/sign/code`,

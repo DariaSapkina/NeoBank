@@ -36,12 +36,12 @@ const CardOverviewSection: FC<ICardOverviewProps> = ({
   onScrollToForm,
   onNavigate,
 }) => {
-  const { currentStep } = useSelector((state: TRootState) => state.application);
+  const { completed } = useSelector((state: TRootState) => state.application);
   const { applicationId } = useSelector((s: TRootState) => s.offers);
 
   const button = getButtonConfig(
+    completed[1],
     applicationId,
-    currentStep,
     onScrollToForm,
     onNavigate,
   );

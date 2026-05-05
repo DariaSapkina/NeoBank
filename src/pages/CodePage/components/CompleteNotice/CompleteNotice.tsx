@@ -2,11 +2,16 @@ import { Button } from "@/components";
 import "./CompleteNotice.scss";
 import SurpriseImage from "@/assets/SurpriseImage.png";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { resetApplication, resetOffers } from "@/store";
 
 const CompleteNotice = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const goToHome = () => {
+    dispatch(resetApplication());
+    dispatch(resetOffers());
     navigate("/");
   };
 

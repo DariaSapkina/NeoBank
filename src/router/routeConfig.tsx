@@ -6,6 +6,7 @@ import {
   LoanPage,
   PersonalAndEmploymentPage,
   PaymentSchedulePage,
+  NotFoundPage,
 } from "@/pages";
 
 export enum AppRoutes {
@@ -15,6 +16,7 @@ export enum AppRoutes {
   THIRD_STEP = "thirdStep",
   FOURTH_STEP = "fourthStep",
   CODE_STEP = "codeStep",
+  NOT_FOUND = "notFound",
 }
 
 export const RoutePath: Record<AppRoutes, string> = {
@@ -24,6 +26,7 @@ export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.THIRD_STEP]: "/loan/:applicationId/document",
   [AppRoutes.FOURTH_STEP]: "/loan/:applicationId/document/sign",
   [AppRoutes.CODE_STEP]: "/loan/:applicationId/code",
+  [AppRoutes.NOT_FOUND]: "/*",
 };
 
 export const routerConfig: Record<AppRoutes, RouteProps> = {
@@ -50,5 +53,9 @@ export const routerConfig: Record<AppRoutes, RouteProps> = {
   [AppRoutes.CODE_STEP]: {
     path: RoutePath.codeStep,
     element: <CodePage />,
+  },
+  [AppRoutes.NOT_FOUND]: {
+    path: RoutePath.notFound,
+    element: <NotFoundPage />,
   },
 };

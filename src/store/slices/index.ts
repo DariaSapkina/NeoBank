@@ -1,2 +1,2 @@
-export { setOffers, setSelectedOffer } from "./offersSlice";
-export { setStep } from "./applicationSlice";
+export { setOffers, setSelectedOffer, resetOffers } from "./offersSlice";
+export { setStep, completeStep, resetApplication } from "./applicationSlice";

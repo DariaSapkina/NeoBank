@@ -2,6 +2,8 @@ import { Button, ModalWindow } from "@/components";
 import { useState, type FC } from "react";
 import { useNavigate } from "react-router-dom";
 import "./ModalsThirdStep.scss";
+import { useDispatch } from "react-redux";
+import { resetApplication, resetOffers } from "@/store";
 
 interface IModalsThirdStep {
   modalWindowActive: boolean;
@@ -14,6 +16,7 @@ const ModalsThirdStep: FC<IModalsThirdStep> = ({
 }) => {
   const navigate = useNavigate();
   const [modalDeniedActive, setModalDeniedActive] = useState(false);
+  const dispatch = useDispatch();
   return (
     <>
       <ModalWindow
@@ -58,6 +61,8 @@ const ModalsThirdStep: FC<IModalsThirdStep> = ({
             size="large"
             onClick={() => {
               setModalDeniedActive(false);
+              dispatch(resetApplication());
+              dispatch(resetOffers());
               navigate("/");
             }}
           />

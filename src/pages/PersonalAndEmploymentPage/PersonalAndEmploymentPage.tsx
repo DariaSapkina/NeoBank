@@ -5,17 +5,22 @@ import { useSelector } from "react-redux";
 import { Navigate, useParams } from "react-router-dom";
 import { ApplicationProcessing, SecondStepForm } from "./components";
 import { FormikProvider } from "formik";
-import "./PersonalAndEmploymenPage.scss";
+import "./PersonalAndEmploymentPage.scss";
 
 const PersonalAndEmploymentPage = () => {
   const { applicationId: userAppId } = useSelector(
     (state: TRootState) => state.offers,
   );
+  const { completed } = useSelector((state: TRootState) => state.application);
   const { applicationId } = useParams();
   const formik = useFormSecondStep();
 
   if (!userAppId || String(userAppId) !== applicationId) {
     return <Navigate to="/loan" replace />;
+  }
+
+  if (completed[2]) {
+    return <ApplicationProcessing />;
   }
 
   if (formik.isLoading) {
@@ -24,10 +29,6 @@ const PersonalAndEmploymentPage = () => {
         <Spinner />
       </div>
     );
-  }
-
-  if (formik.isSuccesRegistration) {
-    return <ApplicationProcessing />;
   }
 
   return (

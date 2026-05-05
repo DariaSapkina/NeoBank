@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { selectOffer, type IRequestFirstStep } from "@/api";
-import { setSelectedOffer, setStep } from "@/store";
+import { completeStep, setSelectedOffer, setStep } from "@/store";
 
 export const useSelectOffer = () => {
   const [isSelectLoading, setIsSelectLoading] = useState(false);
@@ -10,11 +10,13 @@ export const useSelectOffer = () => {
   const handleSelectOffer = async (offer: IRequestFirstStep) => {
     setIsSelectLoading(true);
     const data = await selectOffer(offer);
-    console.log(data);
+
     if (data) {
       dispatch(setSelectedOffer(offer));
-      dispatch(setStep(3));
+      dispatch(completeStep(1));
+      dispatch(setStep(2));
     }
+
     setIsSelectLoading(false);
   };
 

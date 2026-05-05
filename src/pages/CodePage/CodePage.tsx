@@ -2,9 +2,21 @@ import { PinInput, Spinner } from "@/components";
 import { useCode } from "@/hooks";
 import "./CodePage.scss";
 import { CompleteNotice } from "./components";
+import { Navigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import type { TRootState } from "@/store";
 
 const CodePage = () => {
-  const { error, handleCheckCode, loading, isSuccesCode } = useCode();
+  const { error, handleCheckCode, loading } = useCode();
+
+  const { applicationId: userAppId } = useSelector(
+    (state: TRootState) => state.offers,
+  );
+  const { completed } = useSelector((state: TRootState) => state.application);
+  const { applicationId } = useParams();
+  if (!userAppId || String(userAppId) !== applicationId) {
+    return <Navigate to="/loan" replace />;
+  }
 
   if (loading) {
     return (
@@ -14,7 +26,7 @@ const CodePage = () => {
     );
   }
 
-  if (isSuccesCode) {
+  if (completed[5]) {
     return <CompleteNotice />;
   }
 
