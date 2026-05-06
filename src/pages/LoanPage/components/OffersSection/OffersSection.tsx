@@ -1,12 +1,12 @@
+import type { FC } from "react";
 import type { IRequestFirstStep } from "@/api";
 import { OfferCard } from "@/components";
-import type { FC } from "react";
 import "./OffersSection.scss";
 
 interface IOffersSectionProps {
   offers: IRequestFirstStep[];
   handleSelect: (offer: IRequestFirstStep) => void;
-}
+};
 
 const OffersSection: FC<IOffersSectionProps> = ({ offers, handleSelect }) => {
   return (

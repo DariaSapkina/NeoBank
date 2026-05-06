@@ -1,6 +1,5 @@
-//import type { FC } from "react";
 import { useFormikContext } from "formik";
-import type { IInputProps /*IFormInput*/ } from "./Input.props";
+import type { IInputProps } from "./Input.props";
 import "./Input.scss";
 
 const Input = <T,>({

@@ -1,6 +1,7 @@
+export { Table } from "./Table";
 export {
-  Table,
   type IColumnHeader,
   type IRowTable,
   type ITableProps,
-} from "./Table";
+  type TSortDirection,
+} from "./Table.props";

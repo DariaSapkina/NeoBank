@@ -1,61 +1,19 @@
-import { useMemo, useState, type FC } from "react";
+import { type FC } from "react";
+import { useTable } from "@/hooks";
+import type { IRowTable, ITableProps } from ".";
 import "./Table.scss";
 
-export interface IColumnHeader {
-  id: number;
-  title: string;
-  key: keyof IRowTable;
-}
-
-export interface IRowTable {
-  number: number;
-  date: string;
-  totalPayment: number;
-  interestPayment: number;
-  debtPayment: number;
-  remainingDebt: number;
-}
-
-export interface ITableProps {
-  columns: IColumnHeader[];
-  rows: IRowTable[];
-}
-
-type SortDirection = "asc" | "desc";
-
 const Table: FC<ITableProps> = ({ columns, rows }) => {
-  const [sortKey, setSortKey] = useState<keyof IRowTable | null>(null);
-  const [direction, setDirection] = useState<SortDirection>("asc");
+  const { sortKey, direction, handleSort, sortedRows } = useTable(rows);
 
-  const handleSort = (key: keyof IRowTable) => {
-    if (sortKey === key) {
-      setDirection((prev) => (prev === "asc" ? "desc" : "asc"));
-    } else {
-      setSortKey(key);
-      setDirection("asc");
-    }
-  };
-
-  const sortedRows = useMemo(() => {
-    if (!sortKey) return rows;
-
-    return [...rows].sort((a, b) => {
-      const aValue = a[sortKey];
-      const bValue = b[sortKey];
-
-      if (sortKey === "date") {
-        const aDate = new Date(aValue).getTime();
-        const bDate = new Date(bValue).getTime();
-
-        return direction === "asc" ? aDate - bDate : bDate - aDate;
-      }
-
-      if (aValue < bValue) return direction === "asc" ? -1 : 1;
-      if (aValue > bValue) return direction === "asc" ? 1 : -1;
-
-      return 0;
-    });
-  }, [rows, sortKey, direction]);
+  const headCeilClass = (key: keyof IRowTable) =>
+    key === sortKey
+      ? direction === "asc"
+        ? "table__cell_head_asc"
+        : direction === "desc"
+          ? "table__cell_head_desc"
+          : "table__cell_head_ase"
+      : "";
 
   return (
     <div className="table">
@@ -65,7 +23,7 @@ const Table: FC<ITableProps> = ({ columns, rows }) => {
             {columns.map(({ id, title, key }) => (
               <th
                 key={id}
-                className={`table__cell table__cell_head ${key === sortKey && "table__cell_headSorted"}`}
+                className={`table__cell table__cell_head ${headCeilClass(key)}`}
                 onClick={() => handleSort(key)}
               >
                 {title}
@@ -89,4 +47,5 @@ const Table: FC<ITableProps> = ({ columns, rows }) => {
     </div>
   );
 };
+
 export { Table };

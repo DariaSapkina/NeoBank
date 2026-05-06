@@ -37,6 +37,7 @@ const Button: FC<IButtonProps> = ({
       onClick={onClick}
       aria-label={ariaLabel}
       type={type || "button"}
+      disabled={isDisable}
     >
       {icon && <img src={icon} alt="" />}
       <span>{title}</span>

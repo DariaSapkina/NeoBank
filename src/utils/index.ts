@@ -10,6 +10,5 @@ export {
 } from "./validate";
 export { formatNumber } from "./formatNumber";
 export { prepareDataFormFirstStep } from "./prepareDataFormFirstStep";
-export { mapStatusToStep } from "./mapStatusToStep";
-export { getButtonConfig } from "./overviewCardButtonConfig";
+export { getButtonConfig, getRouteByStep } from "./overviewCardButtonConfig";
 export { prepareDataFormSecondStep } from "./prepareDataFormSecondStep";

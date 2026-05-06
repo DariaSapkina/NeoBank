@@ -1,31 +1,25 @@
 import { useState, type FC } from "react";
-import "./ThirdStepTable.scss";
 import { type ITableProps, Table, Button, Checkbox } from "@/components";
-import { ModalsThirdStep } from "../ModalsThirdStep/ModalsThirdStep";
+import { PaymentModals } from "../PaymentModals/PaymentModals";
+import "./PaymentTable.scss";
 
-interface IThirdStepTableProps extends ITableProps {
+interface IPaymentTableProps extends ITableProps {
   onClick: () => void;
-}
+};
 
-const ThirdStepTable: FC<IThirdStepTableProps> = ({
-  columns,
-  rows,
-  onClick,
-}) => {
+const PaymentTable: FC<IPaymentTableProps> = ({ columns, rows, onClick }) => {
   const [checked, setChecked] = useState(false);
   const [modalWindowActive, setModalWindowActive] = useState(false);
 
   return (
-    <section className="thirdStepTable">
-      <div className="thirdStepTable__header">
-        <h1 className="thirdStepTable__title">
-          Continuation of the application
-        </h1>
-        <span className="thirdStepTable__step">Step 3 of 5</span>
+    <div className="paymentTable">
+      <div className="paymentTable__header">
+        <h1 className="paymentTable__title">Continuation of the application</h1>
+        <span className="paymentTable__step">Step 3 of 5</span>
       </div>
       <Table columns={columns} rows={rows} />
-      <div className="thirdStepTable__buttonsWrapper">
-        <div className="thirdStepTable__buttonWrapper">
+      <div className="paymentTable__buttonsWrapper">
+        <div className="paymentTable__buttonWrapper">
           <Button
             title="Deny"
             radius="small"
@@ -34,14 +28,14 @@ const ThirdStepTable: FC<IThirdStepTableProps> = ({
             onClick={() => setModalWindowActive(true)}
           />
         </div>
-        <div className="thirdStepTable__checkWrapper">
+        <div className="paymentTable__checkWrapper">
           <Checkbox
             checked={checked}
             onChange={setChecked}
             label="I agree with the payment schedule"
           />
         </div>
-        <div className="thirdStepTable__buttonWrapper">
+        <div className="paymentTable__buttonWrapper">
           <Button
             title="Send"
             radius="small"
@@ -51,12 +45,12 @@ const ThirdStepTable: FC<IThirdStepTableProps> = ({
           />
         </div>
       </div>
-      <ModalsThirdStep
+      <PaymentModals
         setModalWindowActive={setModalWindowActive}
         modalWindowActive={modalWindowActive}
       />
-    </section>
+    </div>
   );
 };
 
-export { ThirdStepTable };
+export { PaymentTable };

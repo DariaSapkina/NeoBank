@@ -1,7 +1,7 @@
 import { URL } from "@/constants";
 import axios from "axios";
 
-export const createDocument = async (applicationId: number | null) => {
+export const createDocument = async (applicationId: number) => {
   try {
     const res = await axios.post(`${URL}/document/${applicationId}`);
     return res;

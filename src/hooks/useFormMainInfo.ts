@@ -4,9 +4,9 @@ import { useDispatch } from "react-redux";
 import { validateFormFirstStep, prepareDataFormFirstStep } from "@/utils";
 import type { IFormInput } from "@/components";
 import { sendFirstStepForm } from "@/api";
-import { setOffers, setStep } from "@/store";
+import { setOffers } from "@/store";
 
-export const useFormFirstStep = () => {
+export const useFormMainInfo = () => {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 
@@ -31,7 +31,6 @@ export const useFormFirstStep = () => {
 
       if (res) {
         dispatch(setOffers(res));
-        dispatch(setStep(2));
       }
 
       setIsLoading(false);

@@ -45,7 +45,8 @@
 
     &_success {
       &::after {
-        background: url("../../assets/Check_fill.svg");
+        background: url("../../assets/Check_fill.svg") no-repeat;
+        background-position: center;
       }
     }
   }

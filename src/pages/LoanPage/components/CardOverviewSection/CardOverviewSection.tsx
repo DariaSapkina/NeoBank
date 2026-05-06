@@ -3,8 +3,8 @@ import { useSelector } from "react-redux";
 import cardImageLoanPage from "@/assets/cardImageLoanPage.png";
 import { Tooltip, Button } from "@/components";
 import type { TRootState } from "@/store";
-import "./CardOverviewSection.scss";
 import { getButtonConfig } from "@/utils";
+import "./CardOverviewSection.scss";
 
 const FEATURE_LIST = [
   {
@@ -30,18 +30,18 @@ const FEATURE_LIST = [
 interface ICardOverviewProps {
   onScrollToForm: () => void;
   onNavigate: (applicationId: number | null) => void;
-}
+};
 
 const CardOverviewSection: FC<ICardOverviewProps> = ({
   onScrollToForm,
   onNavigate,
 }) => {
-  const { currentStep } = useSelector((state: TRootState) => state.application);
+  const { completed } = useSelector((state: TRootState) => state.application);
   const { applicationId } = useSelector((s: TRootState) => s.offers);
 
   const button = getButtonConfig(
+    completed[1],
     applicationId,
-    currentStep,
     onScrollToForm,
     onNavigate,
   );

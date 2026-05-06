@@ -1,0 +1,22 @@
+.formedDocumentNotice {
+  padding: 166px 20px;
+
+  &__title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #1c1c1e;
+    letter-spacing: 2%;
+    line-height: 112%;
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  &__description {
+    font-size: 16px;
+    font-weight: 500;
+    color: #4f5665;
+    letter-spacing: 2%;
+    line-height: 112%;
+    text-align: center;
+  }
+}

@@ -5,7 +5,7 @@ interface ICheckboxProps {
   checked: boolean;
   onChange: (value: boolean) => void;
   label: string;
-}
+};
 
 const Checkbox: FC<ICheckboxProps> = ({ checked, onChange, label }) => {
   return (
