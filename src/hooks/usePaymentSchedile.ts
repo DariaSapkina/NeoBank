@@ -1,7 +1,7 @@
-import { createDocument, getApplicationInfo } from "@/api";
-import { completeStep, setStep, type TRootState } from "@/store";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { createDocument, getApplicationInfo } from "@/api";
+import { completeStep, setStep, type TRootState } from "@/store";
 
 interface IScheduleItem {
   number: number;
@@ -10,7 +10,7 @@ interface IScheduleItem {
   interestPayment: number;
   debtPayment: number;
   remainingDebt: number;
-}
+};
 
 export const usePaymantSchedule = () => {
   const { applicationId } = useSelector((state: TRootState) => state.offers);

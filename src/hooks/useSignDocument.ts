@@ -1,7 +1,7 @@
-import { signDocument } from "@/api";
-import { completeStep, setStep, type TRootState } from "@/store";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { signDocument } from "@/api";
+import { completeStep, setStep, type TRootState } from "@/store";
 
 export const useSignDocument = () => {
   const [loading, setLoading] = useState(false);

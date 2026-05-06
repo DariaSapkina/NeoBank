@@ -12,20 +12,20 @@ import {
 export enum AppRoutes {
   HOME = "home",
   LOAN = "loan",
-  SECOND_STEP = "secondStep",
-  THIRD_STEP = "thirdStep",
-  FOURTH_STEP = "fourthStep",
-  CODE_STEP = "codeStep",
+  PERSONAL_AND_EMPLOYMENT = "personalAndEmployment",
+  PAYMENT_SCHEDULE = "paymentSchedule",
+  SIGN_DOCUMENT = "signDocument",
+  CODE = "code",
   NOT_FOUND = "notFound",
-}
+};
 
 export const RoutePath: Record<AppRoutes, string> = {
   [AppRoutes.HOME]: "/",
   [AppRoutes.LOAN]: "/loan",
-  [AppRoutes.SECOND_STEP]: "/loan/:applicationId",
-  [AppRoutes.THIRD_STEP]: "/loan/:applicationId/document",
-  [AppRoutes.FOURTH_STEP]: "/loan/:applicationId/document/sign",
-  [AppRoutes.CODE_STEP]: "/loan/:applicationId/code",
+  [AppRoutes.PERSONAL_AND_EMPLOYMENT]: "/loan/:applicationId",
+  [AppRoutes.PAYMENT_SCHEDULE]: "/loan/:applicationId/document",
+  [AppRoutes.SIGN_DOCUMENT]: "/loan/:applicationId/document/sign",
+  [AppRoutes.CODE]: "/loan/:applicationId/code",
   [AppRoutes.NOT_FOUND]: "/*",
 };
 
@@ -38,20 +38,20 @@ export const routerConfig: Record<AppRoutes, RouteProps> = {
     path: RoutePath.loan,
     element: <LoanPage />,
   },
-  [AppRoutes.SECOND_STEP]: {
-    path: RoutePath.secondStep,
+  [AppRoutes.PERSONAL_AND_EMPLOYMENT]: {
+    path: RoutePath.personalAndEmployment,
     element: <PersonalAndEmploymentPage />,
   },
-  [AppRoutes.THIRD_STEP]: {
-    path: RoutePath.thirdStep,
+  [AppRoutes.PAYMENT_SCHEDULE]: {
+    path: RoutePath.paymentSchedule,
     element: <PaymentSchedulePage />,
   },
-  [AppRoutes.FOURTH_STEP]: {
-    path: RoutePath.fourthStep,
+  [AppRoutes.SIGN_DOCUMENT]: {
+    path: RoutePath.signDocument,
     element: <SignDocumentPage />,
   },
-  [AppRoutes.CODE_STEP]: {
-    path: RoutePath.codeStep,
+  [AppRoutes.CODE]: {
+    path: RoutePath.code,
     element: <CodePage />,
   },
   [AppRoutes.NOT_FOUND]: {

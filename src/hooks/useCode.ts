@@ -1,7 +1,7 @@
-import { sendCode } from "@/api";
-import { completeStep, type TRootState } from "@/store";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { sendCode } from "@/api";
+import { completeStep, type TRootState } from "@/store";
 
 export const useCode = () => {
   const { applicationId } = useSelector((state: TRootState) => state.offers);

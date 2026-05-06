@@ -1,21 +1,18 @@
-import { Spinner } from "@/components";
-import { useFormSecondStep } from "@/hooks";
-import type { TRootState } from "@/store";
 import { useSelector } from "react-redux";
-import { Navigate, useParams } from "react-router-dom";
-import { ApplicationProcessing, SecondStepForm } from "./components";
+import { Navigate } from "react-router-dom";
 import { FormikProvider } from "formik";
+import { Spinner } from "@/components";
+import { useApplicationIdGuard, useFormPersonalAndEmployment } from "@/hooks";
+import type { TRootState } from "@/store";
+import { ApplicationProcessing, SecondStepForm } from "./components";
 import "./PersonalAndEmploymentPage.scss";
 
 const PersonalAndEmploymentPage = () => {
-  const { applicationId: userAppId } = useSelector(
-    (state: TRootState) => state.offers,
-  );
   const { completed } = useSelector((state: TRootState) => state.application);
-  const { applicationId } = useParams();
-  const formik = useFormSecondStep();
+  const formik = useFormPersonalAndEmployment();
+  const { isValidApplicationId } = useApplicationIdGuard();
 
-  if (!userAppId || String(userAppId) !== applicationId) {
+  if (!isValidApplicationId) {
     return <Navigate to="/loan" replace />;
   }
 
@@ -32,11 +29,11 @@ const PersonalAndEmploymentPage = () => {
   }
 
   return (
-    <div className="personalAndEmploymentPage">
+    <section className="personalAndEmploymentPage">
       <FormikProvider value={formik}>
         <SecondStepForm />
       </FormikProvider>
-    </div>
+    </section>
   );
 };
 

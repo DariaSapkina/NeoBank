@@ -1,28 +1,7 @@
 import { type FC } from "react";
-import "./Table.scss";
 import { useTable } from "@/hooks";
-
-export interface IColumnHeader {
-  id: number;
-  title: string;
-  key: keyof IRowTable;
-}
-
-export interface IRowTable {
-  number: number;
-  date: string;
-  totalPayment: number;
-  interestPayment: number;
-  debtPayment: number;
-  remainingDebt: number;
-}
-
-export interface ITableProps {
-  columns: IColumnHeader[];
-  rows: IRowTable[];
-}
-
-export type TSortDirection = "asc" | "desc" | "base";
+import type { IRowTable, ITableProps } from ".";
+import "./Table.scss";
 
 const Table: FC<ITableProps> = ({ columns, rows }) => {
   const { sortKey, direction, handleSort, sortedRows } = useTable(rows);
@@ -68,4 +47,5 @@ const Table: FC<ITableProps> = ({ columns, rows }) => {
     </div>
   );
 };
+
 export { Table };

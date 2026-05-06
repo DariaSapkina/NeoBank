@@ -6,7 +6,7 @@ interface IFormField {
   legend?: string;
   inputs: IInputs[] | ISecondStepInputs[];
   size?: string;
-}
+};
 
 const FormFields = <T,>({ inputs, legend, size }: IFormField) => {
   return (

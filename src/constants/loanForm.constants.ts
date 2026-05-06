@@ -10,13 +10,13 @@ export interface IInputs extends IInputBase {
   type?: "text" | "email" | "date";
   tag: TInputTag;
   name: keyof IFormInput;
-}
+};
 
 export interface ISecondStepInputs extends IInputBase {
   type?: "text" | "email" | "date";
   tag: TInputTag;
   name: keyof IFormInputSecondStep;
-}
+};
 
 export const INPUTS_INFO: IInputs[] = [
   {

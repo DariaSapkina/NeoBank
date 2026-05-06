@@ -5,7 +5,7 @@ interface IOffersSlice {
   applicationId: number | null;
   offers: IRequestFirstStep[];
   selectedOffer: IRequestFirstStep | null;
-}
+};
 
 const initialState: IOffersSlice = {
   applicationId: null,

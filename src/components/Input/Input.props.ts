@@ -8,7 +8,7 @@ export interface IFormInput {
   birthdate: string;
   passportSeries: string;
   passportNumber: string;
-}
+};
 
 export interface IFormInputSecondStep {
   gender: "MALE" | "FAMALE" | "";
@@ -27,7 +27,7 @@ export interface IFormInputSecondStep {
   position: "WORKER" | "MID_MANAGER" | "TOP_MANAGER" | "OWNER" | "";
   workExperienceTotal: number | string;
   workExperienceCurrent: number | string;
-}
+};
 
 export type TInputOption = {
   title: string;
@@ -40,10 +40,10 @@ export interface IInputBase {
   label: string;
   required?: boolean;
   options?: TInputOption[];
-}
+};
 
 export interface IInputProps extends IInputBase {
   type?: string;
   name: string;
   size?: string;
-}
+};

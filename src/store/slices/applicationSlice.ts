@@ -5,7 +5,7 @@ type StepRegistration = 1 | 2 | 3 | 4 | 5;
 interface IApplicationSlice {
   currentStep: StepRegistration;
   completed: Record<StepRegistration, boolean>;
-}
+};
 
 const initialState: IApplicationSlice = {
   currentStep: 1,

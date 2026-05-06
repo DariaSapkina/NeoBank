@@ -1,12 +1,11 @@
-import { registerApplication } from "@/api";
-import { completeStep, setStep, type TRootState } from "@/store";
-import { validateFormSecondStep } from "@/utils";
-import { prepareDataFormSecondStep } from "@/utils";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { registerApplication } from "@/api";
+import { completeStep, setStep, type TRootState } from "@/store";
+import { validateFormSecondStep, prepareDataFormSecondStep } from "@/utils";
 
-export const useFormSecondStep = () => {
+export const useFormPersonalAndEmployment = () => {
   const [isLoading, setIsLoading] = useState(false);
   const { applicationId } = useSelector((state: TRootState) => state.offers);
   const dispatch = useDispatch();

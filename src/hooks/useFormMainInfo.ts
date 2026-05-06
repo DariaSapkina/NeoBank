@@ -6,7 +6,7 @@ import type { IFormInput } from "@/components";
 import { sendFirstStepForm } from "@/api";
 import { setOffers } from "@/store";
 
-export const useFormFirstStep = () => {
+export const useFormMainInfo = () => {
   const [isLoading, setIsLoading] = useState(false);
   const dispatch = useDispatch();
 

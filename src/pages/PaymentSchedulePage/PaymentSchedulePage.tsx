@@ -1,10 +1,10 @@
-import { Spinner, type IColumnHeader } from "@/components";
-import { usePaymantSchedule } from "@/hooks";
-import { FormedDocumentNotice, ThirdStepTable } from "./components";
-import "./PaymentSchedulePage.scss";
-import { Navigate, useParams } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { Spinner, type IColumnHeader } from "@/components";
+import { useApplicationIdGuard, usePaymantSchedule } from "@/hooks";
+import { FormedDocumentNotice, PaymentTable } from "./components";
 import type { TRootState } from "@/store";
+import "./PaymentSchedulePage.scss";
 
 const TABLR_HEADER: IColumnHeader[] = [
   { id: 1, title: "NUMBER", key: "number" },
@@ -17,15 +17,10 @@ const TABLR_HEADER: IColumnHeader[] = [
 
 const PaymentSchedulePage = () => {
   const { loading, schedule, submitSchedule } = usePaymantSchedule();
-
-  const { applicationId: userAppId } = useSelector(
-    (state: TRootState) => state.offers,
-  );
   const { completed } = useSelector((state: TRootState) => state.application);
+  const { isValidApplicationId } = useApplicationIdGuard();
 
-  const { applicationId } = useParams();
-
-  if (!userAppId || String(userAppId) !== applicationId) {
+  if (!isValidApplicationId) {
     return <Navigate to="/loan" replace />;
   }
 
@@ -42,15 +37,15 @@ const PaymentSchedulePage = () => {
   }
 
   return (
-    <div className="paymentSchedulePage">
+    <section className="paymentSchedulePage">
       {schedule && (
-        <ThirdStepTable
+        <PaymentTable
           columns={TABLR_HEADER}
           rows={schedule}
           onClick={submitSchedule}
         />
       )}
-    </div>
+    </section>
   );
 };
 

@@ -15,8 +15,11 @@ export interface IRequestFirstStep {
 
 export const sendFirstStepForm = async (value: IFormInput) => {
   try {
-    const res = await axios.post(`${URL}/application`, value);
-    return res.data as IRequestFirstStep[];
+    const res = await axios.post<IRequestFirstStep[]>(
+      `${URL}/application`,
+      value,
+    );
+    return res.data;
   } catch (e) {
     if (e instanceof Error) {
       console.log(e.message);

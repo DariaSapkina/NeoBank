@@ -3,12 +3,9 @@
 .notFoundPage {
   @include container;
   padding-bottom: 96px;
-
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   &__content {
     display: flex;
@@ -62,9 +59,7 @@
 
 @media (max-width: 720px) {
   .notFoundPage {
-    &__wrapper {
-      flex-direction: column-reverse;
-    }
+    flex-direction: column-reverse;
   }
 }
 

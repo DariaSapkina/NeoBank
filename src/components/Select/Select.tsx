@@ -1,6 +1,5 @@
-//import type { FC } from "react";
 import { useFormikContext } from "formik";
-import type { IInputProps /*IFormInput*/ } from "@/components";
+import type { IInputProps } from "@/components";
 import "./Select.scss";
 
 const Select = <T,>({
@@ -37,7 +36,7 @@ const Select = <T,>({
         ))}
       </select>
       {errors[fieldName] && (
-        <p className="input__error">{errors[fieldName] as string}</p>
+        <p className="select__error">{errors[fieldName] as string}</p>
       )}
     </div>
   );

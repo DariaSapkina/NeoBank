@@ -1,12 +1,15 @@
 import { useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import {
   CardOverviewSection,
   StepsSection,
   TabsSection,
   LoanApplicationFlow,
 } from "./components";
+import { getRouteByStep } from "@/utils";
+import type { TRootState } from "@/store";
 import "./LoanPage.scss";
-import { useNavigate } from "react-router-dom";
 
 const LoanPage = () => {
   const formRef = useRef<HTMLDivElement | null>(null);
@@ -19,9 +22,11 @@ const LoanPage = () => {
     });
   };
 
+  const { currentStep } = useSelector((state: TRootState) => state.application);
+
   const navigateToStep = (applicationId: number | null) => {
     if (!applicationId) return null;
-    navigate(`/loan/${applicationId}`);
+    navigate(`${getRouteByStep(currentStep, applicationId)}`);
   };
 
   return (

@@ -5,7 +5,7 @@ import "./PinInput.scss";
 export interface IPinInputProps {
   length: number;
   onComplete: (code: string) => void;
-}
+};
 
 const PinInput: FC<IPinInputProps> = ({ length, onComplete }) => {
   const { values, setRef, handleChange, handleKeyDown } = usePIN(

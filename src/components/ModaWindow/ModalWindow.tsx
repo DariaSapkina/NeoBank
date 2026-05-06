@@ -5,14 +5,16 @@ import "./ModalWindow.scss";
 interface IModalWindowProps {
   active: boolean;
   setActive: (value: boolean) => void;
+  onClose?: () => void;
   children: ReactNode;
   title: string;
   paragraph: string;
-}
+};
 
 const ModalWindow: FC<IModalWindowProps> = ({
   active,
   setActive,
+  onClose,
   children,
   title,
   paragraph,
@@ -30,7 +32,13 @@ const ModalWindow: FC<IModalWindowProps> = ({
           <h2 className="modalWindow__title">{title}</h2>
           <button
             className="modalWindow__closeBtn"
-            onClick={() => setActive(false)}
+            onClick={() => {
+              if (onClose) {
+                onClose();
+              } else {
+                setActive(false);
+              }
+            }}
           >
             <img src={Close_square} alt="" />
           </button>

@@ -1,9 +1,9 @@
-import { Button } from "@/components";
-import "./CompleteNotice.scss";
-import SurpriseImage from "@/assets/SurpriseImage.png";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { Button } from "@/components";
 import { resetApplication, resetOffers } from "@/store";
+import SurpriseImage from "@/assets/SurpriseImage.png";
+import "./CompleteNotice.scss";
 
 const CompleteNotice = () => {
   const navigate = useNavigate();
