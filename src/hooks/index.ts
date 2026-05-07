@@ -6,7 +6,7 @@ export { useSubscribeNewsLetter } from "./useSubscribeNewsLetter";
 export { useFormMainInfo } from "./useFormMainInfo";
 export { useSelectOffer } from "./useSelectOffer";
 export { useFormPersonalAndEmployment } from "./useFormPersonalAndEmployment";
-export { usePaymentSchedule } from "./usePaymentSchedile";
+export { usePaymentSchedule } from "./usePaymentSchedule";
 export { useSignDocument } from "./useSignDocument";
 export { useCode } from "./useCode";
 export { usePIN } from "./usePIN";

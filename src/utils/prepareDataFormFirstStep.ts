@@ -1,5 +1,8 @@
 import type { FormikValues } from "formik";
 import type { IFormInput } from "@/types";
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+dayjs.extend(customParseFormat);
 
 export const prepareDataFormFirstStep = (values: FormikValues): IFormInput => {
   return Object.fromEntries(
@@ -13,11 +16,9 @@ export const prepareDataFormFirstStep = (values: FormikValues): IFormInput => {
       }
 
       if (key === "birthdate" && typeof value === "string") {
-        const date = new Date(value);
-        const day = String(date.getDate()).padStart(2, "0");
-        const month = String(date.getMonth() + 1).padStart(2, "0");
-        const year = date.getFullYear();
-        return [key, `${year}-${month}-${day}`];
+        const date = dayjs(value,"DD.MM.YYYY").format("YYYY-MM-DD");
+        
+        return [key, `${date}`];
       }
 
       return [key, value];

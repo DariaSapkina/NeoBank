@@ -19,19 +19,18 @@ export const useApplicationStatusPolling: FC<IStatusPollingProps> = ({
   useEffect(() => {
     if (!enabled || !applicationId) return;
 
-    const interval = setInterval(async () => {
+    const timeout = setTimeout(async () => {
       const application = await getApplicationInfo(applicationId);
 
       if (!application) return;
 
       if (application.status === "CC_DENIED") {
-        clearInterval(interval);
         dispatch(resetApplication());
         dispatch(resetOffers());
         navigate("/");
       }
     }, 10000);
 
-    return () => clearInterval(interval);
+    return () => clearTimeout(timeout);
   }, [enabled, applicationId, navigate, dispatch]);
 };
