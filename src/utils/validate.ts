@@ -1,5 +1,9 @@
 import type { FormikErrors } from "formik";
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
 import type { IFormInput, IFormInputSecondStep } from "@/types";
+
+dayjs.extend(customParseFormat);
 
 const validateStringRegExp = (
   value: string | number,
@@ -22,18 +26,7 @@ export const emailValidate = (email: string) => {
 };
 
 const validateDate = (date: string) => {
-  if (!date) return false;
-
-  const dateError = validateStringRegExp(
-    date,
-    /^\d{1,2}\.\d{1,2}\.\d{4}$/,
-    "Date invalid",
-  );
-  if (dateError) return false;
-
-  const month = date.split(".")[1];
-
-  if (Number(month) > 12) return false;
+  if (!date || !dayjs(date, "DD.MM.YYYY", true).isValid()) return false;
 
   return true;
 };
@@ -41,18 +34,11 @@ const validateDate = (date: string) => {
 const validateIsAdult = (date: string) => {
   if (!validateDate(date)) return "Incorrect date of birth";
 
-  const [day, month, year] = date.split(".");
+  const birthDate = dayjs(date, "DD.MM.YYYY");
 
-  const birthDate = new Date(Number(year), Number(month) - 1, Number(day));
-  const today = new Date();
+  const isAdult = dayjs().diff(birthDate, "year") >= 18;
 
-  const adultDate = new Date(
-    birthDate.getFullYear() + 18,
-    birthDate.getMonth(),
-    birthDate.getDate(),
-  );
-
-  if (!(adultDate <= today)) return "Incorrect date of birth";
+  if (!isAdult) return "Incorrect date of birth";
 
   return null;
 };
@@ -97,12 +83,9 @@ export const validateFormFirstStep = (
 const validateIsDateAfterNow = (date: string) => {
   if (!validateDate(date)) return "Incorrect date of passport issue date";
 
-  const [day, month, year] = date.split(".");
+  const selectedDate = dayjs(date, "DD.MM.YYYY");
 
-  const currentDate = new Date(Number(year), Number(month) - 1, Number(day));
-
-  if (currentDate.getTime() > Date.now())
-    return "Incorrect date of passport issue date";
+  if (selectedDate.isAfter(dayjs(),'day')) return "Incorrect date of passport issue date";
 
   return null;
 };
@@ -162,6 +145,11 @@ export const validateFormSecondStep = (
   if (salaryError) errors.salary = salaryError;
 
   if (!values.position) errors.position = "Select one of the options";
+
+  if (Number(values.workExperienceTotal) < Number(values.workExperienceCurrent)) {
+    errors.workExperienceCurrent = "Current experience cannot be greater than total";
+    errors.workExperienceTotal = "Total experience cannot be less than current";
+  }
 
   const workExperienceTotalError = validateStringRegExp(
     values.workExperienceTotal,
