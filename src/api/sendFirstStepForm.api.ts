@@ -1,17 +1,6 @@
 import axios from "axios";
-import type { IFormInput } from "@/components";
+import type { IFormInput, IRequestFirstStep } from "@/types";
 import { URL } from "@/constants";
-
-export interface IRequestFirstStep {
-  applicationId: number;
-  isInsuranceEnabled: boolean;
-  isSalaryClient: boolean;
-  monthlyPayment: number;
-  rate: number;
-  requestedAmount: number;
-  term: number;
-  totalAmount: number;
-}
 
 export const sendFirstStepForm = async (value: IFormInput) => {
   try {

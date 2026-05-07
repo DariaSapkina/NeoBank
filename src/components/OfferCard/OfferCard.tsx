@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import type { IRequestFirstStep } from "@/api";
+import type { IRequestFirstStep } from "@/types";
 import { formatNumber } from "@/utils";
 import { Button } from "../Button";
 import SurpriseImage from "@/assets/SurpriseImage.png";
@@ -9,7 +9,7 @@ import "./OfferCard.scss";
 
 interface IOfferCardProps extends IRequestFirstStep {
   handleSelect: (offer: IRequestFirstStep) => void;
-}
+};
 
 const OfferCard: FC<IOfferCardProps> = ({
   applicationId,

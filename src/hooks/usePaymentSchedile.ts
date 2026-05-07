@@ -12,7 +12,7 @@ interface IScheduleItem {
   remainingDebt: number;
 };
 
-export const usePaymantSchedule = () => {
+export const usePaymentSchedule = () => {
   const { applicationId } = useSelector((state: TRootState) => state.offers);
   const [loading, setLoading] = useState(true);
   const [schedule, setSchedule] = useState<IScheduleItem[] | null>(null);

@@ -1,4 +1,4 @@
-import type { IFAQ } from "@/components"
+import type { IFAQ } from "@/types";
 
 const FAQ_ISSUING_SECTION: IFAQ[] = [
   {

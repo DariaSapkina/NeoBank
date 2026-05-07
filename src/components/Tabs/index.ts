@@ -1,1 +1,1 @@
-export { Tabs, type ITab } from "./Tabs";
+export { Tabs } from "./Tabs";

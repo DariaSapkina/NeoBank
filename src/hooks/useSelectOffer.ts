@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { selectOffer, type IRequestFirstStep } from "@/api";
+import { selectOffer } from "@/api";
+import type { IRequestFirstStep } from "@/types";
 import { completeStep, setSelectedOffer, setStep } from "@/store";
 
 export const useSelectOffer = () => {

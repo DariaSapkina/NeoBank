@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import "./CashbackCard.scss";
 
-export interface ICashbackCardProps {
+interface ICashbackCardProps {
   category: string;
   value: string;
 };

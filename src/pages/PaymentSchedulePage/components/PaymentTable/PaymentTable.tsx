@@ -1,5 +1,6 @@
 import { useState, type FC } from "react";
-import { type ITableProps, Table, Button, Checkbox } from "@/components";
+import { Table, Button, Checkbox } from "@/components";
+import type { ITableProps } from "@/types";
 import { PaymentModals } from "../PaymentModals/PaymentModals";
 import "./PaymentTable.scss";
 

@@ -1,4 +1,4 @@
-import type { INews } from "@/api";
+import type { INews } from "@/types";
 
 function isCorrectImgUrl(src: string) {
   const img = new Image(1,1);

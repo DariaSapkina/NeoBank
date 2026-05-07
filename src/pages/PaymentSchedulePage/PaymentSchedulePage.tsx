@@ -1,12 +1,13 @@
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
-import { Spinner, type IColumnHeader } from "@/components";
-import { useApplicationIdGuard, usePaymantSchedule } from "@/hooks";
+import { Spinner } from "@/components";
+import type { IColumnHeader } from "@/types";
+import { useApplicationIdGuard, usePaymentSchedule } from "@/hooks";
 import { FormedDocumentNotice, PaymentTable } from "./components";
 import type { TRootState } from "@/store";
 import "./PaymentSchedulePage.scss";
 
-const TABLR_HEADER: IColumnHeader[] = [
+const TABLE_HEADER: IColumnHeader[] = [
   { id: 1, title: "NUMBER", key: "number" },
   { id: 2, title: "DATE", key: "date" },
   { id: 3, title: "TOTAL PAYMENT", key: "totalPayment" },
@@ -16,7 +17,7 @@ const TABLR_HEADER: IColumnHeader[] = [
 ];
 
 const PaymentSchedulePage = () => {
-  const { loading, schedule, submitSchedule } = usePaymantSchedule();
+  const { loading, schedule, submitSchedule } = usePaymentSchedule();
   const { completed } = useSelector((state: TRootState) => state.application);
   const { isValidApplicationId } = useApplicationIdGuard();
 
@@ -40,7 +41,7 @@ const PaymentSchedulePage = () => {
     <section className="paymentSchedulePage">
       {schedule && (
         <PaymentTable
-          columns={TABLR_HEADER}
+          columns={TABLE_HEADER}
           rows={schedule}
           onClick={submitSchedule}
         />

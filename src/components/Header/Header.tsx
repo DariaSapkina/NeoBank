@@ -1,5 +1,6 @@
 import { Link, NavLink } from "react-router-dom";
-import { Button, BurgerMenu, type TNavItem } from "@/components";
+import { Button, BurgerMenu } from "@/components";
+import type { TNavItem } from "@/types";
 import { AppRoutes, RoutePath } from "@/router";
 import "./Header.scss";
 

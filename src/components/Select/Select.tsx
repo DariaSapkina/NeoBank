@@ -1,5 +1,5 @@
 import { useFormikContext } from "formik";
-import type { IInputProps } from "@/components";
+import type { IInputProps } from "@/types";
 import "./Select.scss";
 
 const Select = <T,>({
@@ -23,7 +23,7 @@ const Select = <T,>({
         {label}
       </label>
       <select
-        className="select__field"
+        className={`select__field ${errors[fieldName] && "select__field_error"}`}
         id={id}
         name={name}
         value={String(values[fieldName] ?? "")}

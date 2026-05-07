@@ -1,10 +1,5 @@
 import axios from "axios";
-
-export interface ICurrencyResponse {
-  conversion_rate: number;
-};
-
-export type TCurrency = Record<string, ICurrencyResponse | null>;
+import type { ICurrencyResponse, TCurrency } from "@/types";
 
 async function getCurrency(
   url: string,

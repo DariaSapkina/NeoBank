@@ -1,1 +1,1 @@
-export { PinInput, type IPinInputProps } from "./PinInput";
+export { PinInput } from "./PinInput";

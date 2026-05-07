@@ -1,8 +1,8 @@
-import { type FC } from "react";
+import type { FC } from "react";
 import { usePIN } from "@/hooks";
 import "./PinInput.scss";
 
-export interface IPinInputProps {
+interface IPinInputProps {
   length: number;
   onComplete: (code: string) => void;
 };

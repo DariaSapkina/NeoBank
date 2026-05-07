@@ -1,5 +1,5 @@
 import type { FormikValues } from "formik";
-import type { IFormInput } from "@/components";
+import type { IFormInput } from "@/types";
 
 export const prepareDataFormFirstStep = (values: FormikValues): IFormInput => {
   return Object.fromEntries(

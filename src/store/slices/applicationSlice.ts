@@ -19,7 +19,7 @@ const initialState: IApplicationSlice = {
 };
 
 const applicationSlice = createSlice({
-  name: "applicartion",
+  name: "application",
   initialState,
   reducers: {
     setStep(state, action: PayloadAction<StepRegistration>) {

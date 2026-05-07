@@ -1,5 +1,5 @@
 import type { FormikErrors } from "formik";
-import type { IFormInput, IFormInputSecondStep } from "@/components";
+import type { IFormInput, IFormInputSecondStep } from "@/types";
 
 const validateStringRegExp = (
   value: string | number,
@@ -22,7 +22,14 @@ export const emailValidate = (email: string) => {
 };
 
 const validateDate = (date: string) => {
-  if (!date || date.includes("-")) return false;
+  if (!date) return false;
+
+  const dateError = validateStringRegExp(
+    date,
+    /^\d{1,2}\.\d{1,2}\.\d{4}$/,
+    "Date invalid",
+  );
+  if (dateError) return false;
 
   const month = date.split(".")[1];
 
@@ -100,6 +107,20 @@ const validateIsDateAfterNow = (date: string) => {
   return null;
 };
 
+const validateDivisionCode = (value: string) => {
+  if (!value.includes("-"))
+    return "The division code must be in format XXX-XXX";
+
+  const passportIssueBranchError = validateStringRegExp(
+    value,
+    /^\d{3}-\d{3}$/,
+    "The division code must be 6 digits",
+  );
+  if (passportIssueBranchError) return passportIssueBranchError;
+
+  return null;
+};
+
 export const validateFormSecondStep = (
   values: IFormInputSecondStep,
 ): FormikErrors<IFormInputSecondStep> => {
@@ -117,10 +138,8 @@ export const validateFormSecondStep = (
   );
   if (passportIssueDateError) errors.passportIssueDate = passportIssueDateError;
 
-  const passportIssueBranchError = validateStringRegExp(
+  const passportIssueBranchError = validateDivisionCode(
     values.passportIssueBranch,
-    /^\d{3}-\d{3}$/,
-    "The series must be 6 digits",
   );
   if (passportIssueBranchError)
     errors.passportIssueBranch = passportIssueBranchError;
@@ -131,7 +150,7 @@ export const validateFormSecondStep = (
   const employerINNError = validateStringRegExp(
     values.employerINN,
     /^\d{12}$/,
-    "The series must be 12 digits",
+    "Department code must be 12 digits",
   );
   if (employerINNError) errors.employerINN = employerINNError;
 
@@ -147,7 +166,7 @@ export const validateFormSecondStep = (
   const workExperienceTotalError = validateStringRegExp(
     values.workExperienceTotal,
     /^\d{1,2}$/,
-    "Enter your salary",
+    "Enter your work experience total",
   );
   if (workExperienceTotalError)
     errors.workExperienceTotal = workExperienceTotalError;
@@ -155,7 +174,7 @@ export const validateFormSecondStep = (
   const workExperienceCurrentError = validateStringRegExp(
     values.workExperienceCurrent,
     /^\d{1,2}$/,
-    "Enter your salary",
+    "Enter your work experience current",
   );
   if (workExperienceCurrentError)
     errors.workExperienceCurrent = workExperienceCurrentError;

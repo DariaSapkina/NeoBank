@@ -1,22 +1,7 @@
 import type {
-  IFormInput,
-  IFormInputSecondStep,
-  IInputBase,
-} from "@/components";
-
-type TInputTag = "input" | "select";
-
-export interface IInputs extends IInputBase {
-  type?: "text" | "email" | "date";
-  tag: TInputTag;
-  name: keyof IFormInput;
-};
-
-export interface ISecondStepInputs extends IInputBase {
-  type?: "text" | "email" | "date";
-  tag: TInputTag;
-  name: keyof IFormInputSecondStep;
-};
+  IInputs,
+  ISecondStepInputs
+} from "@/types";
 
 export const INPUTS_INFO: IInputs[] = [
   {
@@ -119,7 +104,7 @@ export const BASIC_INPUTS_SECOND_STEP_INFO: ISecondStepInputs[] = [
     options: [
       {
         value: "",
-        title: "",
+        title: "Select gender",
       },
       {
         value: "MALE",
@@ -140,7 +125,7 @@ export const BASIC_INPUTS_SECOND_STEP_INFO: ISecondStepInputs[] = [
     options: [
       {
         value: "",
-        title: "",
+        title: "Select marital status",
       },
       {
         value: "MARRIED",
@@ -169,7 +154,7 @@ export const BASIC_INPUTS_SECOND_STEP_INFO: ISecondStepInputs[] = [
     options: [
       {
         value: "",
-        title: "",
+        title: "Select dependent amount",
       },
       {
         value: 0,
@@ -231,7 +216,7 @@ export const EMPLOYMENT_INPUTS_SECOND_STEP_INFO: ISecondStepInputs[] = [
     options: [
       {
         value: "",
-        title: "",
+        title: "Select employment status",
       },
       {
         value: "UNEMPLOYED",
@@ -278,7 +263,7 @@ export const EMPLOYMENT_INPUTS_SECOND_STEP_INFO: ISecondStepInputs[] = [
     options: [
       {
         value: "",
-        title: "",
+        title: "Select position",
       },
       {
         value: "WORKER",

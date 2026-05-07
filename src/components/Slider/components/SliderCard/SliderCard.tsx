@@ -1,6 +1,6 @@
 import type { FC } from "react";
 import { Link } from "react-router-dom";
-import type { INews } from "@/api";
+import type { INews } from "@/types";
 import "./SliderCard.scss";
 
 interface ISliderCardProps extends INews {

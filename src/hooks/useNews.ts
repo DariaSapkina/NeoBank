@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { getNews, type INewsResponse } from "@/api";
+import { getNews } from "@/api";
+import type { INewsResponse } from "@/types";
 import { URL_NEWS, API_KEY_NEWS } from "@/constants";
 
 export const useNews = () => {

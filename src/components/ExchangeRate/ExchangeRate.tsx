@@ -1,10 +1,10 @@
 import type { FC } from "react";
 import { Link } from "react-router-dom";
 import { CURRENCIES_FROM } from "@/constants";
-import type { TCurrency } from "@/api";
+import type { TCurrency } from "@/types";
 import "./ExchangeRate.scss";
 
-export interface IExchangeRateProps {
+interface IExchangeRateProps {
   data: TCurrency;
   loading: boolean;
   date: string;

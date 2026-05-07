@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { REFRESH_INTERVAL_MS } from "@/constants";
-import { loadCurrency, type TCurrencyData } from "@/utils";
+import { loadCurrency } from "@/utils";
+import type { TCurrency } from "@/types";
 
 export const useCurrency = () => {
-  const [data, setData] = useState<TCurrencyData>({});
+  const [data, setData] = useState<TCurrency>({});
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

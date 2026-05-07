@@ -1,4 +1,4 @@
-import type { IRequestSecondStep } from "@/api";
+import type { IRequestSecondStep } from "@/types";
 import type { FormikValues } from "formik";
 
 export const prepareDataFormSecondStep = (

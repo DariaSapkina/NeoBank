@@ -31,7 +31,7 @@ const DenyConfirmModal: FC<IConfirmModalProps> = ({
           />
         </div>
         <div className="paymentModals__buttonWrapper">
-          <Button title="Send" radius="small" size="large" onClick={onClose} />
+          <Button title="Cancel" radius="small" size="large" onClick={onClose} />
         </div>
       </div>
     </ModalWindow>

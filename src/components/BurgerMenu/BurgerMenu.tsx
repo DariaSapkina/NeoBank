@@ -1,13 +1,8 @@
 import type { FC } from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import type { TNavItem } from "@/types";
 import "./BurgerMenu.scss";
-
-export type TNavItem = {
-  id: number;
-  label: string;
-  href: string;
-};
 
 interface IBurgerMenuProps {
   items: TNavItem[];

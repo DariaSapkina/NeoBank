@@ -3,7 +3,7 @@ import { Header } from "@/components";
 import { Footer } from "@/components";
 import "./Layout.scss";
 
-export interface ILayoutProps {
+interface ILayoutProps {
   children: ReactNode;
 };
 

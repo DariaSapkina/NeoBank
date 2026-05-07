@@ -1,5 +1,5 @@
 import { Input, Select } from "@/components";
-import type { IInputs, ISecondStepInputs } from "@/constants";
+import type { IInputs, ISecondStepInputs } from "@/types";
 import "./FormFields.scss";
 
 interface IFormField {

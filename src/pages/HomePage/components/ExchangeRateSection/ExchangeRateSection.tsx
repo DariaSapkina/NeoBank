@@ -1,5 +1,5 @@
 import { ExchangeRate } from "@/components";
-import { useCurrency } from "@/hooks/useCurrency";
+import { useCurrency } from "@/hooks";
 import { getDate } from "@/utils";
 import "./ExchangeRateSection.scss";
 
