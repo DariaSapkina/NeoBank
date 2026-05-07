@@ -3,14 +3,14 @@ import { Button, BurgerMenu, type TNavItem } from "@/components";
 import { AppRoutes, RoutePath } from "@/router";
 import "./Header.scss";
 
-const LINKS: TNavItem[] = [
-  { id: 1, label: "Credit card", href: RoutePath[AppRoutes.LOAN] },
-  { id: 2, label: "Product", href: "/product" },
-  { id: 3, label: "Account", href: "/account" },
-  { id: 4, label: "Resources", href: "/resorces" },
-];
-
 const Header = () => {
+  const LINKS: TNavItem[] = [
+    { id: 1, label: "Credit card", href: RoutePath[AppRoutes.LOAN] },
+    { id: 2, label: "Product", href: "/product" },
+    { id: 3, label: "Account", href: "/account" },
+    { id: 4, label: "Resources", href: "/resorces" },
+  ];
+
   return (
     <header className="header">
       <div className="header__title">
