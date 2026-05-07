@@ -1,11 +1,6 @@
-import { type FC } from "react";
+import type { FC } from "react";
+import type { IFAQ } from "@/types";
 import "./Accordion.scss";
-
-export interface IFAQ {
-  id: string;
-  title: string;
-  content: string;
-};
 
 interface IAccordionProps {
   accordionData: IFAQ[];

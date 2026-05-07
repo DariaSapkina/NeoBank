@@ -1,6 +1,7 @@
 import { useState, type ChangeEvent } from "react";
 import { useFormikContext } from "formik";
-import { Amount, FormFields, Button, type IFormInput } from "@/components";
+import { Amount, FormFields, Button } from "@/components";
+import type { IFormInput } from "@/types";
 import { INPUTS_INFO } from "@/constants";
 import { formatNumber } from "@/utils";
 import "./FormSection.scss";

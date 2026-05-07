@@ -17,5 +17,3 @@ export interface ITableProps {
   columns: IColumnHeader[];
   rows: IRowTable[];
 };
-
-export type TSortDirection = "asc" | "desc" | "base";

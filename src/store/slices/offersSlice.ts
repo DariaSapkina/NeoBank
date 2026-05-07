@@ -1,5 +1,5 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
-import type { IRequestFirstStep } from "@/api";
+import type { IRequestFirstStep } from "@/types";
 
 interface IOffersSlice {
   applicationId: number | null;

@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { IRequestFirstStep } from "./sendFirstStepForm.api";
+import type { IRequestFirstStep } from "@/types";
 import { URL } from "@/constants";
 
 export const selectOffer = async (offer: IRequestFirstStep) => {

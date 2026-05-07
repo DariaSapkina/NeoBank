@@ -1,12 +1,6 @@
-import { useState, type FC, type ReactNode } from "react";
+import { useState, type FC } from "react";
+import type { ITab } from "@/types";
 import "./Tabs.scss";
-
-export interface ITab {
-  id: number;
-  label: string;
-  value: string;
-  content: ReactNode;
-};
 
 interface ITabsProps {
   tabs: ITab[];

@@ -1,7 +1,9 @@
 import { useMemo, useState } from "react";
-import type { IRowTable, TSortDirection } from "@/components";
+import type { IRowTable } from "@/types";
 
-export const useTable = (rows: IRowTable[]) => {
+type TSortDirection = "asc" | "desc" | "base";
+
+export const useSortTable = (rows: IRowTable[]) => {
   const [sortKey, setSortKey] = useState<keyof IRowTable | null>(null);
   const [direction, setDirection] = useState<TSortDirection>("base");
 

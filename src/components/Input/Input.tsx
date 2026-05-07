@@ -1,5 +1,5 @@
 import { useFormikContext } from "formik";
-import type { IInputProps } from "./Input.props";
+import type { IInputProps } from "@/types";
 import "./Input.scss";
 
 const Input = <T,>({

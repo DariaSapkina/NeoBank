@@ -29,12 +29,12 @@ export interface IFormInputSecondStep {
   workExperienceCurrent: number | string;
 };
 
-export type TInputOption = {
+type TInputOption = {
   title: string;
   value: number | string;
 };
 
-export interface IInputBase {
+interface IInputBase {
   id: string;
   placeholder?: string;
   label: string;
@@ -46,4 +46,18 @@ export interface IInputProps extends IInputBase {
   type?: string;
   name: string;
   size?: string;
+};
+
+type TInputTag = "input" | "select";
+
+export interface IInputs extends IInputBase {
+  type?: "text" | "email" | "date";
+  tag: TInputTag;
+  name: keyof IFormInput;
+};
+
+export interface ISecondStepInputs extends IInputBase {
+  type?: "text" | "email" | "date";
+  tag: TInputTag;
+  name: keyof IFormInputSecondStep;
 };

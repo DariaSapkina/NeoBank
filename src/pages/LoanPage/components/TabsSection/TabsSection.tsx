@@ -1,4 +1,5 @@
-import { Tabs, type ITab } from "@/components";
+import { Tabs } from "@/components";
+import type { ITab } from "@/types";
 import { TabAbout, TabCashback, TabRates, TabFAQ } from "./components";
 
 const TABS: ITab[] = [

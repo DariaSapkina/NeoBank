@@ -1,5 +1,5 @@
 import type { FC } from "react";
-import type { IRequestFirstStep } from "@/api";
+import type { IRequestFirstStep } from "@/types";
 import { OfferCard } from "@/components";
 import "./OffersSection.scss";
 

@@ -1,18 +1,6 @@
 import axios from "axios";
 import { filterArticles } from "@/utils";
-
-export interface INews {
-  title: string;
-  description: string;
-  url: string;
-  urlToImage: string;
-};
-
-export interface INewsResponse {
-  status: "ok" | "error";
-  totalResults: number;
-  articles: INews[];
-};
+import type { INewsResponse, INews } from "@/types";
 
 export async function getNews(url: string, apiKey: string) {
   try {

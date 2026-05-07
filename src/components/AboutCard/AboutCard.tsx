@@ -1,7 +1,7 @@
 import type { FC } from "react";
 import "./AboutCard.scss";
 
-export interface IAboutCardProps {
+interface IAboutCardProps {
   icon: string;
   title: string;
   description: string;

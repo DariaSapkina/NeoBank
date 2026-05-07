@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useFormik } from "formik";
 import { useDispatch } from "react-redux";
 import { validateFormFirstStep, prepareDataFormFirstStep } from "@/utils";
-import type { IFormInput } from "@/components";
+import type { IFormInput } from "@/types";
 import { sendFirstStepForm } from "@/api";
 import { setOffers } from "@/store";
 

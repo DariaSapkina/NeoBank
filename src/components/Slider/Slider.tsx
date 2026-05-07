@@ -1,5 +1,5 @@
 import { useRef, type FC } from "react";
-import type { INews } from "@/api";
+import type { INews } from "@/types";
 import { SliderCard, SliderButton } from "./components";
 import { useResizeObserver, useSlider } from "@/hooks";
 import { truncateText } from "@/utils";

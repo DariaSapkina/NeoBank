@@ -4,11 +4,19 @@ import { useDispatch, useSelector } from "react-redux";
 import { registerApplication } from "@/api";
 import { completeStep, setStep, type TRootState } from "@/store";
 import { validateFormSecondStep, prepareDataFormSecondStep } from "@/utils";
+import { useApplicationStatusPolling } from "./useApplicationStatusPolling";
 
 export const useFormPersonalAndEmployment = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [waitingDecision, setWaitingDecision] = useState(false);
   const { applicationId } = useSelector((state: TRootState) => state.offers);
+
   const dispatch = useDispatch();
+
+  useApplicationStatusPolling({
+    applicationId,
+    enabled: waitingDecision,
+  });
 
   const formik = useFormik({
     initialValues: {
@@ -36,6 +44,7 @@ export const useFormPersonalAndEmployment = () => {
       }
 
       const res = await registerApplication(applicationId, preparedData);
+      setWaitingDecision(true);
 
       if (res) {
         dispatch(completeStep(2));

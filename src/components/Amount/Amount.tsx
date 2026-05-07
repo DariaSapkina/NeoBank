@@ -1,7 +1,7 @@
 import { type FC } from "react";
 import { useFormikContext } from "formik";
 import { formatNumber } from "@/utils/formatNumber";
-import type { IFormInput } from "@/components";
+import type { IFormInput } from "@/types";
 import "./Amount.scss";
 
 interface IAmountProps {

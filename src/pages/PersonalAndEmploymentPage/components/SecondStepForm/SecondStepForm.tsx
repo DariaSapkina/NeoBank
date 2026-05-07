@@ -1,5 +1,6 @@
 import { useFormikContext } from "formik";
-import { Button, FormFields, type IFormInputSecondStep } from "@/components";
+import { Button, FormFields } from "@/components";
+import type { IFormInputSecondStep } from "@/types";
 import {
   BASIC_INPUTS_SECOND_STEP_INFO,
   EMPLOYMENT_INPUTS_SECOND_STEP_INFO,

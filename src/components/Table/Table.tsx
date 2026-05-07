@@ -1,10 +1,10 @@
 import { type FC } from "react";
-import { useTable } from "@/hooks";
-import type { IRowTable, ITableProps } from ".";
+import { useSortTable } from "@/hooks";
+import type { IRowTable, ITableProps } from "@/types";
 import "./Table.scss";
 
 const Table: FC<ITableProps> = ({ columns, rows }) => {
-  const { sortKey, direction, handleSort, sortedRows } = useTable(rows);
+  const { sortKey, direction, handleSort, sortedRows } = useSortTable(rows);
 
   const headCeilClass = (key: keyof IRowTable) =>
     key === sortKey
