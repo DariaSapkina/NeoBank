@@ -2,7 +2,7 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
 type StepRegistration = 1 | 2 | 3 | 4 | 5;
 
-interface IApplicationSlice {
+export interface IApplicationSlice {
   currentStep: StepRegistration;
   completed: Record<StepRegistration, boolean>;
 };
