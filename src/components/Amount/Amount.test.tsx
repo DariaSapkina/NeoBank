@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { act, fireEvent, render, screen } from "@testing-library/react";
 import { Formik } from "formik";
 import { Amount } from "./Amount";
 
@@ -30,8 +30,10 @@ describe("Amount component", () => {
   test("update amount on range change", async () => {
     renderComponent();
     const input = screen.getByRole("slider") as HTMLInputElement;
-    fireEvent.change(input, {
-      target: { value: 300000 },
+    await act(async () => {
+      fireEvent.change(input, {
+        target: { value: 300000 },
+      });
     });
     expect(input).toHaveValue("300000");
   });
